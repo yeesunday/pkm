@@ -3,9 +3,7 @@ var gulp = require("gulp"),
 
 gulp.task('deploy', function () {
   gulp.src("_book/**/*.*")
-    .pipe(deploy({
-      remoteUrl: "https://github.com/yeesunday/pkm"
-    }))
+    .pipe(deploy())
     .on("error", function(err){
       console.log(err)
     })
