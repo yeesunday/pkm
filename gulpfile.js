@@ -8,3 +8,5 @@ gulp.task('deploy', function () {
       console.log(err)
     })
 });
+
+gulp.task("default", ["deploy"]);
