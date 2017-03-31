@@ -1,5 +1,26 @@
 {
   "styles": {
     "website": "style/website.css"
+  },
+  "plugins": [
+    "page-footer"
+  ],
+  "pluginsConfig": {
+    "page-footer": {
+      "isShowIssues": true,
+      "wisdom": "less is more",
+      "copyright": "Copyright © yeesunday",
+      "style": "symmetrical",
+      "repo": "yeesunday/pkm",
+      "issueNum": "20",
+      "isShowQRCode": true,
+      "timeColor": "#a10000",
+      "utcOffset": "8",
+      "format": "yyyy-MM-dd hh:mm:ss",
+      "signature": "Rain",
+      "baseUri": "https://yeesunday.gitbooks.io/pkm/content/",
+      "copyrightColor": "#666",
+      "description": "update time:"
+    }
   }
 }
