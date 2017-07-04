@@ -4,6 +4,7 @@
 * [前端](fe/summary.md)
   * 基础
      * [浏览器](fe/base/browser.md)
+     * [JS](fe/base/es.md)
   * 解决方案
      * [文件预览](fe/solutions/docspreview.md)
   * 架构
