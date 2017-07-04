@@ -1,3 +1,9 @@
+## 学习资料
+* express 
+    * 中文文档 http://javascript.ruanyifeng.com/nodejs/express.html
+    * 项目例子 https://github.com/nswbmw/N-blog
+* koa https://github.com/17koa/koa-generator-examples
+
 ## Note
 
 * 使用 [nvm](https://github.com/creationix/nvm) 管理 node 版本
@@ -6,4 +12,5 @@
 *  正则表达式
     *  https://deerchao.net/tutorials/regex/regex.htm
 * mongodb
+* [cross-env](https://www.npmjs.com/package/cross-env) 兼容 windows 的环境变量设置
 
