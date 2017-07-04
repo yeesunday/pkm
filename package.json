@@ -1,7 +1,10 @@
 {
-  "name": "pkm for rain",
+  "name": "pkm",
   "version": "0.0.1",
   "description": "",
+  "scripts": {
+    "update": "git add . && git commit -m 'update' && git push && gitbook build && gulp"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/yeesunday/pkm.git"
