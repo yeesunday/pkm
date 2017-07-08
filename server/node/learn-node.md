@@ -13,4 +13,5 @@
     *  https://deerchao.net/tutorials/regex/regex.htm
 * mongodb
 * [cross-env](https://www.npmjs.com/package/cross-env) 兼容 windows 的环境变量设置
+* supervisor 会监听当前目录下 node 和 js 后缀的文件，当这些文件发生改动时，supervisor 会自动重启程序。
 
