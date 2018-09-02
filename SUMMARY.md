@@ -13,8 +13,8 @@
         * [Vue](fe/solutions/vue.md)
 * BE
     * NodeJS
-        * [tutorials](server/node/tutorials.md)
+        * [Tutorials](server/node/tutorials.md)
 * Tools
-    * [dev](tools/dev.md)
-    * [shortcuts](tools/shortcuts.md)
+    * [Dev](tools/dev.md)
+    * [Shortcuts](tools/shortcuts.md)
 
