@@ -37,7 +37,8 @@
 
 * ShadowsocksX-NG
 * GoAgentX
-* [proxy in terminal](https://github.com/mrdulin/blog/issues/18)
+* Surge: support both mac and iphone
+* [Proxy in terminal](https://github.com/mrdulin/blog/issues/18)
 
 
 
