@@ -1,6 +1,5 @@
-## 个人知识管理
+## Knowledge Management
 
+Dev knowledge database of Rain.
 
-随便写写。
-
-
+Enjoy coding.
