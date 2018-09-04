@@ -115,7 +115,7 @@
                 <span>
             
                     
-                    Basic
+                    Hardcore
             
                 </span>
             
@@ -124,9 +124,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1.1" data-path="../basic/browser.html">
+        <li class="chapter " data-level="1.2.1.1" data-path="../hardcore/browser.html">
             
-                <a href="../basic/browser.html">
+                <a href="../hardcore/browser.html">
             
                     
                     Browser
@@ -137,9 +137,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.1.2" data-path="../basic/es.html">
+        <li class="chapter " data-level="1.2.1.2" data-path="../hardcore/es.html">
             
-                <a href="../basic/es.html">
+                <a href="../hardcore/es.html">
             
                     
                     JS
@@ -188,6 +188,19 @@
             
                     
                     Animation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../cases/wechat.html">
+            
+                <a href="../cases/wechat.html">
+            
+                    
+                    Wechat
             
                 </a>
             
@@ -398,13 +411,15 @@
 <h2 id="be-careful">Be careful</h2>
 <ul>
 <li><a href="https://blog.suzper.com/2017/03/16/IE9%E5%9C%A8vue%E4%B8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E5%85%BC%E5%AE%B9/" target="_blank">Vue&apos;s Compatibility issues in IE9</a></li>
+<li>Since the <a href="https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats" target="_blank">change detection caveats</a> in Vue will not trigger change while you change an object in array, you may need to use <code>$set</code>&#x3002;like:<pre><code>this.$set(this.dataList, indexOfItem, item);
+</code></pre>to force tigger the update of view pages.</li>
 </ul>
 <footer class="footer"><div class="footer__container--symmetrical" alt="
 https://yeesunday.gitbooks.io/pkm/content/fe/solutions/vue.html
 ">
 <img src="data:image/gif;base64,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" width="170" height="170">
 <div class="footer__description--symmetrical"><p class="paragraph footer__author--symmetrical" style="color: #000 !important;">Rain<sup class="super">&#xAE;</sup></p><p class="paragraph footer__quote--symmetrical" style="color: #000 !important;">less is more</p><div class="footer__main--symmetrical"><p class="paragraph footer__main__paragraph--symmetrical copyright" style="color: #666 !important;">Copyright &#xA9; yeesunday all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></p><p class="paragraph footer__main__paragraph--symmetrical footer__modifyTime--symmetrical" style="color: #a10000 !important;"><span style="color: #666 !important;">update time:</span>
-2018-09-02 04:34:40
+2018-09-05 04:09:10
 </p></div></div></div><div class="box__issues">
 <span class="issue-line"><p class="issue-header"><strong>1</strong> issues reported</p></span><p class="issues">#1 <a href="https://github.com/yeesunday/pkm/issues/1" target="_blank">&#x3010;&#x8F6C;&#x3011;&#x4ECE;&#x7A0B;&#x5E8F;&#x5458;&#x5230;CTO&#x7684;&#x6D85;&#x69C3;&#x8F6C;&#x578B;&#xFF0D;&#xFF0D;&#x5510;&#x5DE7;&#x624B;&#x628A;&#x624B;&#x6559;&#x4F60;&#x600E;&#x4E48;&#x505A;CTO</a><span style="margin-left: 10px; color: #ddd;">2017-03-22 19:06:47</span><span class="issue-label" style="background-color: #cccccc; color: #000000;">&#x65B9;&#x6CD5;&#x8BBA;</span><span class="issue-label" style="background-color: #84b6eb; color: #000000;">&#x7BA1;&#x7406;</span><span class="issue-label" style="background-color: #ee0701; color: #ffffff;">&#x91CD;&#x8981;</span></p>
 
@@ -447,7 +462,7 @@ https://yeesunday.gitbooks.io/pkm/content/fe/solutions/vue.html
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vue","level":"1.2.3.2","depth":3,"next":{"title":"BE","level":"1.3","depth":1,"ref":"","articles":[{"title":"NodeJS","level":"1.3.1","depth":2,"ref":"","articles":[{"title":"Tutorials","level":"1.3.1.1","depth":3,"path":"server/node/tutorials.md","ref":"server/node/tutorials.md","articles":[]}]}]},"previous":{"title":"WorkFlow","level":"1.2.3.1","depth":3,"path":"fe/solutions/workflow.md","ref":"fe/solutions/workflow.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["page-footer"],"pluginsConfig":{"page-footer":{"isShowIssues":true,"wisdom":"less is more","copyright":"Copyright © yeesunday","styles (normal, symmetrical)":"normal","issueNum":"20","style":"symmetrical","repo":"yeesunday/pkm","isShowQRCode":true,"timeColor":"#a10000","utcOffset":"8","format":"yyyy-MM-dd hh:mm:ss","signature":"Rain","token":"","baseUri":"https://yeesunday.gitbooks.io/pkm/content/","copyrightColor":"#666","description":"update time:"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"style/website.css"}},"file":{"path":"fe/solutions/vue.md","mtime":"2018-09-01T12:34:40.460Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-02T03:13:29.322Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Vue","level":"1.2.3.2","depth":3,"next":{"title":"BE","level":"1.3","depth":1,"ref":"","articles":[{"title":"NodeJS","level":"1.3.1","depth":2,"ref":"","articles":[{"title":"Tutorials","level":"1.3.1.1","depth":3,"path":"server/node/tutorials.md","ref":"server/node/tutorials.md","articles":[]}]}]},"previous":{"title":"WorkFlow","level":"1.2.3.1","depth":3,"path":"fe/solutions/workflow.md","ref":"fe/solutions/workflow.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["page-footer"],"pluginsConfig":{"page-footer":{"isShowIssues":true,"wisdom":"less is more","copyright":"Copyright © yeesunday","styles (normal, symmetrical)":"normal","issueNum":"20","style":"symmetrical","repo":"yeesunday/pkm","isShowQRCode":true,"timeColor":"#a10000","utcOffset":"8","format":"yyyy-MM-dd hh:mm:ss","signature":"Rain","token":"","baseUri":"https://yeesunday.gitbooks.io/pkm/content/","copyrightColor":"#666","description":"update time:"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"style/website.css"}},"file":{"path":"fe/solutions/vue.md","mtime":"2018-09-04T12:09:10.092Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-09-04T12:42:18.045Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
