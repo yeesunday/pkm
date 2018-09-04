@@ -2,12 +2,13 @@
 
 * [About](README.md)
 * FE
-    * Basic
-        * [Browser](fe/basic/browser.md)
-        * [JS](fe/basic/es.md)
+    * Hardcore
+        * [Browser](fe/hardcore/browser.md)
+        * [JS](fe/hardcore/es.md)
     * Cases
         * [Docs Preview](fe/cases/docspreview.md)
         * [Animation](fe/cases/animation.md)
+        * [Wechat](fe/cases/wechat.md)
     * Solutions
         * [WorkFlow](fe/solutions/workflow.md)
         * [Vue](fe/solutions/vue.md)

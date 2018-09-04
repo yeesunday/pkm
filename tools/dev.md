@@ -30,14 +30,11 @@
 * MindNode Pro
 * Xee³
 
-
-
-
 ## Fuck GFW
 
 * ShadowsocksX-NG
 * GoAgentX
-* Surge: support both mac and iphone
+* Surge: support both mac and iPhone
 * [Proxy in terminal](https://github.com/mrdulin/blog/issues/18)
 
 
