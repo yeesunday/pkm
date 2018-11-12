@@ -5,19 +5,23 @@
     * Hardcore
         * [Browser](fe/hardcore/browser.md)
         * [JS](fe/hardcore/es.md)
-        * [Design Pattern](fe/hardcore/designpattern.md)
     * Cases
         * [Docs Preview](fe/cases/docspreview.md)
         * [Animation](fe/cases/animation.md)
         * [Wechat](fe/cases/wechat.md)
     * Solutions
-        * [WorkFlow](fe/solutions/workflow.md)
+        * [FE Architecture](fe/solutions/architecture.md)
         * [Vue](fe/solutions/vue.md)
+        * [PWA](fe/solutions/pwa.md)
+        * [NuxtJS](fe/solutions/nuxt.md)
 * BE
     * NodeJS
         * [Tutorials](server/node/tutorials.md)
-* Architecture
-    * [About](architecture/about.md)
+* Meta Knowledge
+    * [algorithm](meta/algorithm.md)
+    * [Design Pattern](meta/designpattern.md)
+    * [State Manage](meta/statemanage.md)
+    * [architecture](meta/architecture.md)
 * Tools
     * [Dev](tools/dev.md)
     * [Shortcuts](tools/shortcuts.md)
