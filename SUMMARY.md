@@ -6,9 +6,10 @@
         * [Browser](fe/hardcore/browser.md)
         * [JS](fe/hardcore/es.md)
     * Cases
-        * [Docs Preview](fe/cases/docspreview.md)
+        * [Rich Text Display](fe/cases/richtextdisplay.md)
         * [Animation](fe/cases/animation.md)
         * [Wechat](fe/cases/wechat.md)
+        * [Realtime Application](fe/cases/realtime.md)
     * Solutions
         * [FE Architecture](fe/solutions/architecture.md)
         * [Vue](fe/solutions/vue.md)
