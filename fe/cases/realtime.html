@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Vue · GitBook</title>
+        <title>Realtime Application · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -53,10 +53,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="pwa.html" />
     
-    
-    <link rel="prev" href="architecture.html" />
+    <link rel="prev" href="wechat.html" />
     
 
     </head>
@@ -171,9 +169,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="../cases/richtextdisplay.html">
+        <li class="chapter " data-level="1.2.2.1" data-path="richtextdisplay.html">
             
-                <a href="../cases/richtextdisplay.html">
+                <a href="richtextdisplay.html">
             
                     
                     Rich Text Display
@@ -184,9 +182,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.2" data-path="../cases/animation.html">
+        <li class="chapter " data-level="1.2.2.2" data-path="animation.html">
             
-                <a href="../cases/animation.html">
+                <a href="animation.html">
             
                     
                     Animation
@@ -197,9 +195,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.3" data-path="../cases/wechat.html">
+        <li class="chapter " data-level="1.2.2.3" data-path="wechat.html">
             
-                <a href="../cases/wechat.html">
+                <a href="wechat.html">
             
                     
                     Wechat
@@ -210,9 +208,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.4" data-path="../cases/realtime.html">
+        <li class="chapter active" data-level="1.2.2.4" data-path="realtime.html">
             
-                <a href="../cases/realtime.html">
+                <a href="realtime.html">
             
                     
                     Realtime Application
@@ -242,9 +240,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.3.1" data-path="architecture.html">
+        <li class="chapter " data-level="1.2.3.1" data-path="../solutions/architecture.html">
             
-                <a href="architecture.html">
+                <a href="../solutions/architecture.html">
             
                     
                     FE Architecture
@@ -255,9 +253,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.3.2" data-path="vue.html">
+        <li class="chapter " data-level="1.2.3.2" data-path="../solutions/vue.html">
             
-                <a href="vue.html">
+                <a href="../solutions/vue.html">
             
                     
                     Vue
@@ -268,9 +266,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3.3" data-path="pwa.html">
+        <li class="chapter " data-level="1.2.3.3" data-path="../solutions/pwa.html">
             
-                <a href="pwa.html">
+                <a href="../solutions/pwa.html">
             
                     
                     PWA
@@ -281,9 +279,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3.4" data-path="nuxt.html">
+        <li class="chapter " data-level="1.2.3.4" data-path="../solutions/nuxt.html">
             
-                <a href="nuxt.html">
+                <a href="../solutions/nuxt.html">
             
                     
                     NuxtJS
@@ -533,7 +531,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Vue</a>
+        <a href="../.." >Realtime Application</a>
     </h1>
 </div>
 
@@ -548,22 +546,21 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="suggested-loaders">Suggested loaders</h2>
+                                <h3 id="webrtc">WebRTC</h3>
 <ul>
-<li><a href="https://vue-loader.vuejs.org/en/configurations/pre-processors.html" target="_blank">sass-resources-loader</a>: it will helps if you want to import some global variables.</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API" target="_blank">mdn</a></li>
+<li><a href="https://github.com/andyet/SimpleWebRTC" target="_blank">SimpleWebRTC</a></li>
 </ul>
-<h2 id="be-careful">Be careful</h2>
+<h3 id="websocket">WebSocket</h3>
 <ul>
-<li><a href="https://blog.suzper.com/2017/03/16/IE9%E5%9C%A8vue%E4%B8%8B%E7%9A%84%E4%B8%80%E4%BA%9B%E5%85%BC%E5%AE%B9/" target="_blank">Vue&apos;s Compatibility issues in IE9</a></li>
-<li>Since the <a href="https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats" target="_blank">change detection caveats</a> in Vue will not trigger change while you change an object in array, you may need to use <code>$set</code>&#x3002;like:<pre><code>this.$set(this.dataList, indexOfItem, item);
-</code></pre>to force tigger the update of view pages.</li>
+<li><a href="https://github.com/socketio/socket.io" target="_blank">socket.io</a> </li>
 </ul>
 <footer class="footer"><div class="footer__container--symmetrical" alt="
-https://yeesunday.gitbooks.io/pkm/content/fe/solutions/vue.html
+https://yeesunday.gitbooks.io/pkm/content/fe/cases/realtime.html
 ">
-<img src="data:image/gif;base64,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" width="170" height="170">
+<img src="data:image/gif;base64,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" width="170" height="170">
 <div class="footer__description--symmetrical"><p class="paragraph footer__author--symmetrical" style="color: #000 !important;">Rain<sup class="super">&#xAE;</sup></p><p class="paragraph footer__quote--symmetrical" style="color: #000 !important;">less is more</p><div class="footer__main--symmetrical"><p class="paragraph footer__main__paragraph--symmetrical copyright" style="color: #666 !important;">Copyright &#xA9; yeesunday all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></p><p class="paragraph footer__main__paragraph--symmetrical footer__modifyTime--symmetrical" style="color: #a10000 !important;"><span style="color: #666 !important;">update time:</span>
-2018-09-04 20:09:10
+2018-11-13 17:15:31
 </p></div></div></div><div class="box__issues">
 <span class="issue-line"><p class="issue-header"><strong>1</strong> issues reported</p></span><p class="issues">#1 <a href="https://github.com/yeesunday/pkm/issues/1" target="_blank">&#x3010;&#x8F6C;&#x3011;&#x4ECE;&#x7A0B;&#x5E8F;&#x5458;&#x5230;CTO&#x7684;&#x6D85;&#x69C3;&#x8F6C;&#x578B;&#xFF0D;&#xFF0D;&#x5510;&#x5DE7;&#x624B;&#x628A;&#x624B;&#x6559;&#x4F60;&#x600E;&#x4E48;&#x505A;CTO</a><span style="margin-left: 10px; color: #ddd;">2017-03-22 19:06:47</span><span class="issue-label" style="background-color: #cccccc; color: #000000;">&#x65B9;&#x6CD5;&#x8BBA;</span><span class="issue-label" style="background-color: #84b6eb; color: #000000;">&#x7BA1;&#x7406;</span><span class="issue-label" style="background-color: #ee0701; color: #ffffff;">&#x91CD;&#x8981;</span></p>
 
@@ -594,14 +591,10 @@ https://yeesunday.gitbooks.io/pkm/content/fe/solutions/vue.html
 
             
                 
-                <a href="architecture.html" class="navigation navigation-prev " aria-label="Previous page: FE Architecture">
+                <a href="wechat.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Wechat">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="pwa.html" class="navigation navigation-next " aria-label="Next page: PWA">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -610,7 +603,7 @@ https://yeesunday.gitbooks.io/pkm/content/fe/solutions/vue.html
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Vue","level":"1.2.3.2","depth":3,"next":{"title":"PWA","level":"1.2.3.3","depth":3,"path":"fe/solutions/pwa.md","ref":"fe/solutions/pwa.md","articles":[]},"previous":{"title":"FE Architecture","level":"1.2.3.1","depth":3,"path":"fe/solutions/architecture.md","ref":"fe/solutions/architecture.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["page-footer"],"pluginsConfig":{"page-footer":{"isShowIssues":true,"wisdom":"less is more","copyright":"Copyright © yeesunday","styles (normal, symmetrical)":"normal","issueNum":"20","style":"symmetrical","repo":"yeesunday/pkm","isShowQRCode":true,"timeColor":"#a10000","utcOffset":"8","format":"yyyy-MM-dd hh:mm:ss","signature":"Rain","token":"","baseUri":"https://yeesunday.gitbooks.io/pkm/content/","copyrightColor":"#666","description":"update time:"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"style/website.css"}},"file":{"path":"fe/solutions/vue.md","mtime":"2018-09-04T12:09:10.092Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-11-19T13:05:52.182Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Realtime Application","level":"1.2.2.4","depth":3,"next":{"title":"Solutions","level":"1.2.3","depth":2,"ref":"","articles":[{"title":"FE Architecture","level":"1.2.3.1","depth":3,"path":"fe/solutions/architecture.md","ref":"fe/solutions/architecture.md","articles":[]},{"title":"Vue","level":"1.2.3.2","depth":3,"path":"fe/solutions/vue.md","ref":"fe/solutions/vue.md","articles":[]},{"title":"PWA","level":"1.2.3.3","depth":3,"path":"fe/solutions/pwa.md","ref":"fe/solutions/pwa.md","articles":[]},{"title":"NuxtJS","level":"1.2.3.4","depth":3,"path":"fe/solutions/nuxt.md","ref":"fe/solutions/nuxt.md","articles":[]}]},"previous":{"title":"Wechat","level":"1.2.2.3","depth":3,"path":"fe/cases/wechat.md","ref":"fe/cases/wechat.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["page-footer"],"pluginsConfig":{"page-footer":{"isShowIssues":true,"wisdom":"less is more","copyright":"Copyright © yeesunday","styles (normal, symmetrical)":"normal","issueNum":"20","style":"symmetrical","repo":"yeesunday/pkm","isShowQRCode":true,"timeColor":"#a10000","utcOffset":"8","format":"yyyy-MM-dd hh:mm:ss","signature":"Rain","token":"","baseUri":"https://yeesunday.gitbooks.io/pkm/content/","copyrightColor":"#666","description":"update time:"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"style/website.css"}},"file":{"path":"fe/cases/realtime.md","mtime":"2018-11-13T09:15:31.672Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-11-19T13:05:52.182Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

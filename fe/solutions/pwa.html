@@ -171,12 +171,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="../cases/docspreview.html">
+        <li class="chapter " data-level="1.2.2.1" data-path="../cases/richtextdisplay.html">
             
-                <a href="../cases/docspreview.html">
+                <a href="../cases/richtextdisplay.html">
             
                     
-                    Docs Preview
+                    Rich Text Display
             
                 </a>
             
@@ -203,6 +203,19 @@
             
                     
                     Wechat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../cases/realtime.html">
+            
+                <a href="../cases/realtime.html">
+            
+                    
+                    Realtime Application
             
                 </a>
             
@@ -535,17 +548,32 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h2 id="pwa">PWA</h2>
+                                <p>PWA&#xFF08;Progressive Web App&#xFF09;&#x662F;&#x524D;&#x7AEF;&#x7684;&#x5927;&#x8D8B;&#x52BF;&#xFF0C;&#x5B83;&#x80FD;&#x6781;&#x5927;&#x7684;&#x52A0;&#x5FEB;&#x524D;&#x7AEF;&#x9875;&#x9762;&#x7684;&#x52A0;&#x8F7D;&#x901F;&#x5EA6;&#xFF0C;&#x5F97;&#x5230;&#x8FD1;&#x4E4E;&#x539F;&#x751F; app &#x7684;&#x5C55;&#x793A;&#x6548;&#x679C;&#xFF08;&#x5176;&#x5B9E;&#x96BE;&#x8BF4;&#xFF09;&#x3002;PWA &#x5176;&#x5B9E;&#x662F;&#x591A;&#x79CD;&#x524D;&#x7AEF;&#x6280;&#x672F;&#x7684;&#x7EC4;&#x5408;&#x3002;</p>
+<ul>
+<li>&#x200B;Workbox - Registers a service worker for offline caching.</li>
+<li>&#x200B;Manifest - Automatically generate manifest.json file.</li>
+<li>Meta - Automatically adds SEO friendly meta data with manifest integration.</li>
+<li>&#x200B;Icon - Automatically generates app icons with different sizes.</li>
+<li>&#x200B;OneSignal - Free background push notifications using OneSignal.</li>
+</ul>
+<h3 id="service-worker">Service Worker</h3>
+<p>&#x5728; MDN &#x4E0A;&#x7684;&#x8BF4;&#x660E;&#xFF1A;</p>
+<blockquote>
+<p>Service workers &#x672C;&#x8D28;&#x4E0A;&#x5145;&#x5F53;Web&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0E;&#x6D4F;&#x89C8;&#x5668;&#x4E4B;&#x95F4;&#x7684;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5728;&#x7F51;&#x7EDC;&#x53EF;&#x7528;&#x65F6;&#x4F5C;&#x4E3A;&#x6D4F;&#x89C8;&#x5668;&#x548C;&#x7F51;&#x7EDC;&#x95F4;&#x7684;&#x4EE3;&#x7406;&#x3002;&#x5B83;&#x4EEC;&#x65E8;&#x5728;&#xFF08;&#x9664;&#x5176;&#x4ED6;&#x4E4B;&#x5916;&#xFF09;&#x4F7F;&#x5F97;&#x80FD;&#x591F;&#x521B;&#x5EFA;&#x6709;&#x6548;&#x7684;&#x79BB;&#x7EBF;&#x4F53;&#x9A8C;&#xFF0C;&#x62E6;&#x622A;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#x5E76;&#x57FA;&#x4E8E;&#x7F51;&#x7EDC;&#x662F;&#x5426;&#x53EF;&#x7528;&#x4EE5;&#x53CA;&#x66F4;&#x65B0;&#x7684;&#x8D44;&#x6E90;&#x662F;&#x5426;&#x9A7B;&#x7559;&#x5728;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x6765;&#x91C7;&#x53D6;&#x9002;&#x5F53;&#x7684;&#x52A8;&#x4F5C;&#x3002;&#x4ED6;&#x4EEC;&#x8FD8;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;&#x63A8;&#x9001;&#x901A;&#x77E5;&#x548C;&#x540E;&#x53F0;&#x540C;&#x6B65;API&#x3002;</p>
+</blockquote>
+<p>&#x5176;&#x5B9E;&#x4E0D;&#x7528;&#x592A;&#x7EA0;&#x7ED3;&#xFF0C;&#x7B80;&#x5355;&#x8D77;&#x89C1;&#x6211;&#x4EEC;&#x5C31;&#x628A;&#x5B83;&#x5F53;&#x6210;&#x66F4;&#x9AD8;&#x7EA7;&#x66F4;&#x5148;&#x8FDB;&#x7684; AppCache &#x5C31;&#x597D;&#x4E86;&#x3002;</p>
+<h3 id="&#x5B66;&#x4E60;&#x8D44;&#x6599;">&#x5B66;&#x4E60;&#x8D44;&#x6599;</h3>
 <ul>
 <li><a href="https://codelabs.developers.google.com/codelabs/your-first-pwapp/#0" target="_blank">Google Tutorials</a></li>
 <li><a href="https://lavas.baidu.com/" target="_blank">&#x767E;&#x5EA6; Lavas&#xFF08;&#x57FA;&#x4E8E; vue &#x7684; PWA &#x65B9;&#x6848;&#xFF09;</a></li>
+<li><a href="https://github.com/GoogleChromeLabs/squoosh/" target="_blank">google-app demo</a></li>
 </ul>
 <footer class="footer"><div class="footer__container--symmetrical" alt="
 https://yeesunday.gitbooks.io/pkm/content/fe/solutions/pwa.html
 ">
 <img src="data:image/gif;base64,R0lGODdhqgCqAIAAAAAAAP///ywAAAAAqgCqAAAC/4yPqcvtD6OctNqLs968+w+G4kiW5omm6sq27gvH8kzX9u0C+s7ziJ/QGXq9IcD4OwaVDOECCN0lIU6js7okEilabRKLDHSvSixYzHymv2Up2rxWs8OKcXFynr7Tdrg+ykYGRHcAZ+gWRpbYtuiQ1/C4eNilJ8lYeLeFWceHuOeH1hg6qggZ59gGSOo5uGcV11q5ahmpRjn6B3upWcv5WirYefjK+QgKfCdhRyia+3upnOp21mqcvCmHSX2t2ZQJre2FHVwa/czsil3siU4Y+ynMnjUN/ly9+80lXW5Lj97XR5azcLd8hSM2D5kqc/DaEcS3DmA3XEvcBcyG8B2vff/1HtSaNGZdM3UVKfIbKQrZnJICWUb4GG/ZPJQUB9I8OSvnMJcOe/aTqVInRKEphwY9ajRpUYD6mBJ9irSoVKhKqU4lF7IETn7bROYM9G2rNLALZ9YQa9HgSrG3yloi66+fiY3HxCHMVTAbSItOz319CLOXqSh1J2rk+M5mQ5MSwd60K/fCRL8GgZ6q6fFaxrg41aabTFIDaNC08mF8qfkz546eCcvzGW0vvG33IooLtlYXXMMdsXZNZ+Ge68O1E94eexAzyLxoZ+sGXoG0c2+58+bmy/FfTNO4Bx8X7Pjna8a+x6vaubF1VoWX7dEDz3P6uPaL06qmwmq1+6XrU9P/ZAiXYrbJ0p1gwiWV3iqWJfaXPne5lOBvnS3GFTh1KVaedJth0J165z03YYSd2DdShe5peF90YeXH21sUjmgciaF5x95+xhVI34D1ycefX6CE9+OM3nxYnm04cniZNdSVVGFb/Yno1W9DWpjdBkqe1lJQJyL2Hne6NDelfSg2hY9sWirHJVZiwrjZTlmO1xKSNT40lXZb+ghjkK6t9KaBOdLYm5cSItdnfg9OOVqaXVImJB6mAUnofIeiWRyDu4F40XDPcZAgomUOVVmSEgUZJmCGmsKnlY+K52KIrDnH3J8Htohqckh6FR6kH+pKH5Fx4bfkmezBpx1t8tClH53Q/0VZJXxXCvspseLh6CZjoRa5rGpSxshkr6tK6ym18RCIKbbERepQoj51ipmD2baZFbya4hVvu7ZGVlyoNgaHbnJ9abtiYfUG5m2H9g4LZ61GbqfpkeSJqu+M26r7MCq3Tstwl3v+xeCgb3p4LJUw8RsrKjKt2WTA/Z7c4I77RkYmreFyk+ev8iG78IXcBugdv6VZ9nO0NK9b8MBsonapZ8Aq2JhQIpZsL9Esk5pZ0vFZHJ9sjCqdYlTKGutxxVlXCaDE2+WKZddV4anjQNXa6bKj/BEMNqhiM+owzlZ9HejFCJsc8q4kzVrz32qX6CXXWFM855aH4WcsrqbSytvjjf8unhpSy0EGW7bn5jz0jhR3Dviok2JYL73FZlzpRQ+aruqoBkd8p142v+4607FuPmZmAs9uVnWZfym7k602i5yJUfc838alCm/5pcX3qPuniJMuactXFY1s46w+FezZgycrrdcRT1j709yvbTva6Nm9tJPYxnnzqRmKD6XZKCNPf/h6W3ew79SsdngSHNwExrbLMS9VeGPR7cb2PrfAKnS809gDY0O8tkGHXVw7UAKlZz/WWRB9terYCGmmJwfWbUPWutFxgkZCn70LYLs7GuF0ZEBKZUpoEgRBChl4r3y10H82DCHlFGU4ThURiLj7oQINVq35Oa0/W3MUFFG4KNH/FQ1ePONg2oToNUvhS4X4s2D/ANZElXUucuPbHrgm58A0epBbUWwa8MRltfeJJnfO45HnvkVG4/2Ri3DEDvb2qLU2+kuEGjSkH+tEw6Oh4IYQGtfDEhW9SIYtgqcSAeGo1sELpoh2Chufr9aYMJJl7IyrS5coY4gmSLEQcKq84wld+TK28K9qG1TZ/wQYs5XdMoC5DJSalueiAj6JS6fjJQDZtbFnmidwyZOkFstyJSY6k3MvEt7Lmvm5UerQTNZspdz+2BxXoQholTxfOdvJNLTFj5oHfBUA87ipWHJMVgPspRiXxDMQNlByfdwjdnR2z0eeM6BwPKY5CanEg/Yz/6EJxdq1/KNIKQK0ZRSFDOw2Kk+k2W6dE+WmelZnwsrlTnFxWxq9Wkcu1OEwZBJ1JTYtmcZD6hNqTrweHWl6SXsCMlVzLF8ZvTc1NYozpy/6Z/ao9q+y/VKOWDymBIuq1HnKyHF/mhlPjYhEjLrNl8B8qrfSJ1ZAJRV38lpp+5q6Q4SedYJVZMigKqi8kFpDpRf1oqdY6rdyiTCvyqJfDfu6qtLlU07kE+peq3JVUc4tWUBUHyxlCb7gmUVzxnzVZM80Kct69nvbYuH0Kjkncy3WlGEN5xu9yMb7jU5tCAMTaltLT2R+kY/V5Kz8Xti8sG6Poac1KugQeLgJ3m9/XP8drqlA2EORTha6hROVq6gXzdVS1aEZkOsnPdqvWXbreA4zbCDJpqLuWbKnQ8xo4jYbQsmZtpo67SIWZcTe/YEWjdmrbGP3666UAjWRICMnSPcp2zgGcbRE/Ot4C3salV73wW097IJ16itBOlJm18ygdPvb0m7lrauLbG5758Xat80wlDXd5ohl2GA/LvduJ8ZpiHEZ1NC+06IjZWZwodnJGhP4agjOYkwlI77raJbHqtMiZv1bGuhJ9sOY7GzZmsxh2A4YvQ1jcAnnekadvXTH8LVqXMlMQBURDbAtvGuQaRlJEwvRqyR2n6DWu+UqgzOx4/TwY1IWTMxi1c2unWb/ZBvZS3OqWLEjkzEjiblbaWpVxCbVHmpIWkx8Hhilw5v0mE1YX3iKtngftSI3o/sfJ8/wtdWtLamjeulTT1mdYN10rIP2PKogVzoGdrRtw1xn5mn0wlPEMkZ7beHSPjHYkDMypRndtxvneIqPdXA2Y+fsJs+snmJENnq16VfdLoy80WZpCrutYKJGKn8YDGZqH3jtI9d1wWxMZjfFfS+pCq2ezJovwVhZPUqy9cepjPC+d+rhEf9bgTBMcqIJzuojc3K+4pWoehMIYFFTsbtLFFt2j1dgAZoZkhud8RvJpeEe+/SDZn21+TgKP3yXfOMxJqyWG+4UaPFbnx7YnHM//57iSvPV0tRzY3jV/Ny9Ad3ix74v0YttVoiaOsPvrHLOzdhyO+KZnGtN751BGbfiYv2zNOevMqHmyW+vWH9LhStUeRi6itPYh2p3qps5PdAH/0uPt3U3eLd673eHb7oBVxR1ce31rr9dcOXV+8FVW0N2VrSUFz37Dk9aP86SEshw0+aVn+32y2t8qvGk8L0fI1+kcx7SCe4o0F2+7lUWHtVfvimOWy/0FeF8mSj/OnAD/N62kpud/dZhoSqobrDbNfhxLj3sqg3zxZ+3jsoXqfoAfuhVx57q7XY+ppS8/FMyvO3As7dou994xF122fbuvPc/VmLaytq7zmbZ58eq7E1dW5PvVA8n4b/LansHd8LnYkdHUH7mcWTUe7VkNIiHYphTfjBjfKxFVQuIAxeIgRmogRvIgR3ogR8IgiEogiNIgiVogieIgimogiVYAAA7" width="170" height="170">
 <div class="footer__description--symmetrical"><p class="paragraph footer__author--symmetrical" style="color: #000 !important;">Rain<sup class="super">&#xAE;</sup></p><p class="paragraph footer__quote--symmetrical" style="color: #000 !important;">less is more</p><div class="footer__main--symmetrical"><p class="paragraph footer__main__paragraph--symmetrical copyright" style="color: #666 !important;">Copyright &#xA9; yeesunday all right reserved, powered by <a href="https://github.com/aleen42" target="_blank">aleen42</a></p><p class="paragraph footer__main__paragraph--symmetrical footer__modifyTime--symmetrical" style="color: #a10000 !important;"><span style="color: #666 !important;">update time:</span>
-2018-10-28 04:55:22
+2018-11-14 14:21:22
 </p></div></div></div><div class="box__issues">
 <span class="issue-line"><p class="issue-header"><strong>1</strong> issues reported</p></span><p class="issues">#1 <a href="https://github.com/yeesunday/pkm/issues/1" target="_blank">&#x3010;&#x8F6C;&#x3011;&#x4ECE;&#x7A0B;&#x5E8F;&#x5458;&#x5230;CTO&#x7684;&#x6D85;&#x69C3;&#x8F6C;&#x578B;&#xFF0D;&#xFF0D;&#x5510;&#x5DE7;&#x624B;&#x628A;&#x624B;&#x6559;&#x4F60;&#x600E;&#x4E48;&#x505A;CTO</a><span style="margin-left: 10px; color: #ddd;">2017-03-22 19:06:47</span><span class="issue-label" style="background-color: #cccccc; color: #000000;">&#x65B9;&#x6CD5;&#x8BBA;</span><span class="issue-label" style="background-color: #84b6eb; color: #000000;">&#x7BA1;&#x7406;</span><span class="issue-label" style="background-color: #ee0701; color: #ffffff;">&#x91CD;&#x8981;</span></p>
 
@@ -592,7 +620,7 @@ https://yeesunday.gitbooks.io/pkm/content/fe/solutions/pwa.html
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"PWA","level":"1.2.3.3","depth":3,"next":{"title":"NuxtJS","level":"1.2.3.4","depth":3,"path":"fe/solutions/nuxt.md","ref":"fe/solutions/nuxt.md","articles":[]},"previous":{"title":"Vue","level":"1.2.3.2","depth":3,"path":"fe/solutions/vue.md","ref":"fe/solutions/vue.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["page-footer"],"pluginsConfig":{"page-footer":{"isShowIssues":true,"wisdom":"less is more","copyright":"Copyright © yeesunday","styles (normal, symmetrical)":"normal","issueNum":"20","style":"symmetrical","repo":"yeesunday/pkm","isShowQRCode":true,"timeColor":"#a10000","utcOffset":"8","format":"yyyy-MM-dd hh:mm:ss","signature":"Rain","token":"","baseUri":"https://yeesunday.gitbooks.io/pkm/content/","copyrightColor":"#666","description":"update time:"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"style/website.css"}},"file":{"path":"fe/solutions/pwa.md","mtime":"2018-10-27T12:55:22.495Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-11-12T13:12:44.508Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"PWA","level":"1.2.3.3","depth":3,"next":{"title":"NuxtJS","level":"1.2.3.4","depth":3,"path":"fe/solutions/nuxt.md","ref":"fe/solutions/nuxt.md","articles":[]},"previous":{"title":"Vue","level":"1.2.3.2","depth":3,"path":"fe/solutions/vue.md","ref":"fe/solutions/vue.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["page-footer"],"pluginsConfig":{"page-footer":{"isShowIssues":true,"wisdom":"less is more","copyright":"Copyright © yeesunday","styles (normal, symmetrical)":"normal","issueNum":"20","style":"symmetrical","repo":"yeesunday/pkm","isShowQRCode":true,"timeColor":"#a10000","utcOffset":"8","format":"yyyy-MM-dd hh:mm:ss","signature":"Rain","token":"","baseUri":"https://yeesunday.gitbooks.io/pkm/content/","copyrightColor":"#666","description":"update time:"},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"style/website.css"}},"file":{"path":"fe/solutions/pwa.md","mtime":"2018-11-14T06:21:22.079Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-11-19T13:05:52.182Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
