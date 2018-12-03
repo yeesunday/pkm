@@ -23,6 +23,7 @@
     * [Design Pattern](meta/designpattern.md)
     * [State Manage](meta/statemanage.md)
     * [architecture](meta/architecture.md)
+    * [Startup Tech](meta/startup_tech.md)
 * Tools
     * [Dev](tools/dev.md)
     * [Shortcuts](tools/shortcuts.md)
