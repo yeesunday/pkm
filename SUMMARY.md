@@ -3,19 +3,25 @@
 * [About](README.md)
 * FE
     * JS
-        * [ECMAScript 新特性](fe/js/es.md)
-        * [零碎知识点](fe/js/other.md)
+        * [变量和类型](fe/js/base.md)
+        * [执行机制](fe/js/workflow.md)
+        * [编码能力](fe/js/code.md)
+        * [手写轮子](fe/js/reimplementing.md)
     * HTML/CSS
     * 框架和类库
+        * [常识](fe/framework/base.md)
         * [状态管理](fe/framework/dataflow.md)
+        * [React](fe/framework/react.md)
     * 运行环境
         * [浏览器API](fe/env/browser_api.md)
+        * [浏览器原理](fe/env/browser.md)
     * 前端工程
         * 打包工具
             * [常识](fe/engineering/base.md)
             * [webpack](fe/engineering/webpack.md)
     * 项目与业务
         * [业务方案](fe/project/solutions.md)
+        * [前端安全](fe/project/security.md)
         * [监控](fe/optimize/monitoring.md)
         * [Rich Text Display](fe/cases/richtextdisplay.md)
         * [Animation](fe/cases/animation.md)
@@ -35,7 +41,7 @@
     * [architecture](meta/architecture.md)
     * [Startup Tech](meta/startup_tech.md)
 * 计算机基础
-    * [计算机网络](cs/network.md)
+    * [网络协议](cs/network.md)
 * 算法
     * [基本常识](algorithm/base.md)
     * [动态规划](algorithm/dynamic_programming.md)
