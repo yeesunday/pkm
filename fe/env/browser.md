@@ -13,6 +13,35 @@
     * 异步 HTTP 请求线程
     * 定时触发器线程
 
-可以看到 js 引擎是浏览器渲染进程的一个线程。而 js 线程和渲染线程是互斥的，所以当 setInterval 密度足够高时，可能会导致画面与数据不一致。解决办法是 setAnimationFrame，他在每次浏览器重绘之前调用 js 函数。
+可以看到 js 引擎是浏览器渲染进程的一个线程。而 js 线程和渲染线程是互斥的，所以当 setInterval 密度足够高时，可能会导致画面与数据不一致。解决办法是 requestAnimationFrame，他在每次浏览器重绘之前调用 js 函数。
 
 [setTimeout和requestAnimationFrame](https://juejin.im/post/5e621f5fe51d452700567c32)
+
+## 渲染过程
+
+![](../../assets/browser_render.png)
+
+### 浏览器工作流程
+
+构建 DOM Tree -> 构建 CSS Rule Tree -> 构建 Rendering Tree -> 布局 -> 绘制。
+
+### JS 阻塞
+
+![](../../assets/browser_render02.png)
+
+1. 正常遇到 script 标签，CSS Rule Tree 继续构建 -> 构建完毕，执行 JS -> 构建 DOM Tree。CSSOM 构建时，JavaScript 执行将暂停，直至 CSSOM 就绪。所以引入顺序上，CSS 应资源先于 JavaScript 资源。
+2. 加 async 或 defer 属性都可以做到下载阶段不阻塞 DOM Tree 的构建，但 defer 可以做到执行阶段也不阻塞。因为 defer 会在 DOMContentLoaded 事件之后才执行 js。什么时候用defer，什么时候用async呢？一般来说，两者之间的选择则是看脚本之间是否有依赖关系，有依赖的话应当要保证执行顺序，应当使用defer没有依赖的话使用async，同时使用的话defer失效。
+
+这里要简要说明一下`window.DOMContentLoaded`和`window.onload`这两个事件的区别，前者是在DOM解析完毕之后触发，这时候DOM解析完毕，JavaScript可以获取到DOM引用，但是页面中的一些资源比如图片、视频等还没有加载完，作用同jQuery中的ready事件。后者则是页面完全加载完毕，包括各种资源。
+
+### 重绘和回流
+
+重绘：当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观、风格，而不会影响布局的，比如background-color。
+
+回流：当render tree中的一部分(或全部)因为元素的规模尺寸、布局、隐藏等改变而需要重新构建
+
+回流必定会发生重绘，重绘不一定会引发回流。
+
+[深入浅出浏览器渲染原理](https://blog.fundebug.com/2019/01/03/understand-browser-rendering/)
+
+[浏览器的渲染：过程与原理](https://juejin.im/entry/59e1d31f51882578c3411c77)

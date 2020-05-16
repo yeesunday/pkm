@@ -7,7 +7,7 @@
 * Number
 * BigInt
 * String
-* Symbol 
+* Symbol
 和 Object
 
 ## 新特性
@@ -18,7 +18,7 @@
 
 Set 集合中的元素无序且唯一，集合中的元素可以是任何类型，无论是原始值还是对象引用。WeakSet 只能是引用，所以只要 WeakSet 成员对象在外部消失，它们在 WeakSet 里面的引用就会自动消失。
 
-Map 类似于对象，也是键值对的集合，但是对象的键只能是字符串，Map 的键可以是任意类型。WeakMap 键名同 WeakSet 只能是引用。
+Map 类似于对象，也是键值对的集合，但是对象的键只能是字符串，Map 的键可以是任意类型，且是有序的。WeakMap 键名同 WeakSet 只能是引用。
 
 [Set、Map、WeakSet 和 WeakMap 的区别](https://juejin.im/post/5d39d14c518825625337f84e)
 
@@ -29,6 +29,8 @@ Array fill 方法，如果是对象，则填充的是对象的引用。例如
   array[0][0] = 1
   array[1][0] === 1 // true
 ```
+
+reduce：`arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])`，如果提供了initialValue，则起始索引号为0，否则从索引1起始。
 
 ## RegExp
 
@@ -41,3 +43,32 @@ Array fill 方法，如果是对象，则填充的是对象的引用。例如
 ## Object.defineProperty
 
 [MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty) 相比于点号赋值，`Object.defineProperty` 方法是对属性更加精确的定义。
+
+## 原型和继承
+
+### 原型
+
+![](../../assets/prototype.png)
+
+1. js在创建对象的时候，都有一个叫做 `__proto__` 的内置属性，用于指向创建它的函数对象的原型对象 prototype
+2. 只有函数有 prototype, 当你创建一个函数时，js会自动为这个函数加上prototype属性，值是一个空对象
+3. Function 和 Object 是两个函数
+4. `__proto__` 将实例对象和构造函数原型连接起来组成了原型链，当读取实例的属性时，如果找不到，就会查找与对象关联的原型中的属性，如果还查不到，就去找原型的原型，一直找到最顶层为止。
+
+[JavaScript深入之从原型到原型链](https://github.com/mqyqingfeng/blog/issues/2)
+
+### 继承
+
+在JS中实现继承，大概有两种思路：使用构造函数或使用原型链。但两者各有利弊，构造函数继承会造成资源的浪费，因为每个实例都会创建父类的属性和方法副本；原型链继承当有包含引用类型值的原型时，则容易造成数据上的混乱。实际更多是两者结合形成组合继承。
+
+```
+　Cat.prototype = new Animal();
+
+　Cat.prototype.constructor = Cat; // 因为上一句更改了 Cat 的 prototype，即 Cat.prototype.constructor 原本执行 Cat 自己，但是被改了。这一句是修正回来。
+```
+
+[Javascript继承机制的设计思想](http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html)
+
+[Javascript面向对象编程（二）：构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html)
+
+[Javascript面向对象编程（三）：非构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance_continued.html)

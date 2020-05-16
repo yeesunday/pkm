@@ -8,3 +8,9 @@
 | 易用性	| 需要程序员自己封装，源生的Cookie接口不友好	| 源生接口可以接受，亦可再次封装来对Object和Array有更好的支持 | 源生接口可以接受，亦可再次封装来对Object和Array有更好的支持 |
 
 [详解 Cookie，Session，Token](https://juejin.im/post/5d01f82cf265da1b67210869)
+
+### 单点登录的实现
+
+使用 token，成熟方案是 JWT（JSON Web Token），解决 session 无法共享登录状态到子系统的问题。
+
+![](../../assets/sso.png)

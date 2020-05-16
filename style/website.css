@@ -1,3 +1,16 @@
 .gitbook-link {
   display: none !important;
 }
+.markdown-section code {
+  background-color: #fff5f5;
+  color: #ff502c;
+  font-size: .87em;
+  padding: .065em .4em;
+}
+
+.markdown-section pre>code {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  color: #333;
+  background: #f8f8f8;
+}

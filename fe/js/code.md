@@ -91,3 +91,24 @@ function throttle(fn, wait, immediate) {
 ```
 
 [什么是防抖和节流？有什么区别？如何实现？](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/5)
+
+## 函数组合
+
+compose(f1, f2, f3) -> f3(f2(f1()))
+
+```
+<!-- 啰嗦版 -->
+const compose = function(...args) {
+  let result
+  return function(...arg2) {
+    result = args[0](...arg2)
+    for(i = 1, l = args.length; i < l; i++) {
+      result = args[i](result)
+    }
+    return result
+  }
+}
+
+<!-- 炫酷版 -->
+const compose = (...args) => (...arg2) => args.reduce((r, f, index) => index === 0 ? f(...r) : f(r), arg2)
+```

@@ -3,7 +3,7 @@
 * [About](README.md)
 * FE
     * JS
-        * [变量和类型](fe/js/base.md)
+        * [基础](fe/js/base.md)
         * [执行机制](fe/js/workflow.md)
         * [编码能力](fe/js/code.md)
         * [手写轮子](fe/js/reimplementing.md)
@@ -20,8 +20,11 @@
             * [常识](fe/engineering/base.md)
             * [webpack](fe/engineering/webpack.md)
     * 项目与业务
+        * [代码规范](fe/project/codestyle.md)
         * [业务方案](fe/project/solutions.md)
+        * [性能优化](fe/project/optimization.md)
         * [前端安全](fe/project/security.md)
+        * [移动适配](fe/project/responsive.md)
         * [监控](fe/optimize/monitoring.md)
         * [Rich Text Display](fe/cases/richtextdisplay.md)
         * [Animation](fe/cases/animation.md)
