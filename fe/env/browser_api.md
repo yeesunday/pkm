@@ -1,3 +1,11 @@
+## DOM 和 BOM
+
+DOM（document object model）：文档对象模型，提供操作页面元素的方法和属性
+
+BOM（browser object model）；浏览器对象模型，提供一些属性和方法可以操作浏览器
+
+[最全的DOM和BOM的解释分析](https://juejin.im/post/5d7677b06fb9a06afd662d20)
+
 ## 存储机制
 
 | 特性	| Cookie | localStorage | sessionStorage |

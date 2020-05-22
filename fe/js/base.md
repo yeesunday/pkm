@@ -72,3 +72,11 @@ reduce：`arr.reduce(callback(accumulator, currentValue[, index[, array]])[, ini
 [Javascript面向对象编程（二）：构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html)
 
 [Javascript面向对象编程（三）：非构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance_continued.html)
+
+### 静态方法、动态方法
+
+静态方法：声明一个仅供当前类或当前类的子类使用的方法。静态的方法在整个应用程序其间存储在内存中，速度快，但占用内存，调用频繁的可以用静态方法。
+
+动态方法：创建实例化对象可直接调用的方法	
+
+[JavaScript中class类的三种方法详解（静态方法、普通方法与构造方法）](https://blog.csdn.net/momDIY/article/details/79997793)
