@@ -80,3 +80,23 @@ reduce：`arr.reduce(callback(accumulator, currentValue[, index[, array]])[, ini
 动态方法：创建实例化对象可直接调用的方法	
 
 [JavaScript中class类的三种方法详解（静态方法、普通方法与构造方法）](https://blog.csdn.net/momDIY/article/details/79997793)
+
+## Call，Apply，Bind的使用与区别
+
+相同点:
+* 都是使用于方法借用及明确this指向场景
+* 第一个参数都是this要指向的对象
+* 都可以利用后续参数传参
+
+不同点:
+* 参数传递方式不同
+* call,apply是立即调用,bind是动态调用
+
+基本使用:
+* Array.prototype.slice.call(obj,0,1,2)
+* Array.prototype.slice.apply(obj,[0,1,2])
+* Array.prototype.slice.bind(obj)(0,1,2)
+
+从上面的例子可以看出来call,apply 使用上几乎保持一致，而bind实际上是返回了一个函数
+
+[实现bind函数](https://juejin.im/post/5b00f146f265da0b7e0c8a54)

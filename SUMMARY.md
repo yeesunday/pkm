@@ -1,7 +1,7 @@
 # Summary
 
-* [About](README.md)
-* FE
+* [关于](README.md)
+* 前端
     * JS
         * [基础](fe/js/base.md)
         * [执行机制](fe/js/workflow.md)
@@ -20,7 +20,7 @@
         * 打包工具
             * [常识](fe/engineering/base.md)
             * [webpack](fe/engineering/webpack.md)
-        * [nginx](fe/engineering/nginx.md)
+        * [代码检查](fe/engineering/linter.md)
     * 项目与业务
         * [代码规范](fe/project/codestyle.md)
         * [业务方案](fe/project/solutions.md)
@@ -36,9 +36,11 @@
         * [Vue](fe/solutions/vue.md)
         * [PWA](fe/solutions/pwa.md)
         * [NuxtJS](fe/solutions/nuxt.md)
-* BE
+* 后端
     * NodeJS
         * [Tutorials](server/node/tutorials.md)
+    * 运维
+        * [nginx](server/ops/nginx.md)
 * Meta Knowledge
     * [algorithm](meta/algorithm.md)
     * [Design Pattern](meta/designpattern.md)
@@ -49,6 +51,7 @@
     * [网络协议](cs/network.md)
 * 算法
     * [基本常识](algorithm/base.md)
+    * [排序](algorithm/sort.md)
     * [动态规划](algorithm/dynamic_programming.md)
 * Tools
     * [Dev](tools/dev.md)

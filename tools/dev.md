@@ -1,10 +1,16 @@
 ## FE
 
-* Editor
-  * VS Code. Recommended extensions below: 
-    * Auto-Open Markdown Preview
-    * Vetur: vue tooling
-    * to be discovered...
+* 编辑器
+  * VS Code
+    * Prettier
+    * ESLint
+    * Auto Close Tag
+    * Auto Import
+    * Auto Rename Tag
+    * CSS Modules
+    * Paste JSON as Code
+    * Path Intellisense
+    * ES7 React/Redux/GraphQL/React-Native snippets
   * Sublime Text
     * [Material Theme](https://github.com/equinusocio/material-theme)
 * Terminal: iTerm2 + zsh + oh-my-zsh + [Z](https://github.com/rupa/z)
