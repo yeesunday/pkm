@@ -22,3 +22,9 @@ BOM（browser object model）；浏览器对象模型，提供一些属性和方
 使用 token，成熟方案是 JWT（JSON Web Token），解决 session 无法共享登录状态到子系统的问题。
 
 ![](../../assets/sso.png)
+
+## window.performance
+
+在开发环境下，其实我们自己打开 Chrome 的开发者工具，切换到网络面板，就能很详细的看到网页性能相关的数据。但当我们需要统计分析用户打开我们网页时的性能如何时，我们将 performance 原始信息或通过简单计算后的信息 (如上面写到的 getPerformanceTiming()  和 getEntryTiming()) 上传到服务器，配合其他信息（如 HTTP 请求头信息），就可以监控到用户端的表现数据。
+
+[初探 performance – 监控网页与程序性能](http://www.alloyteam.com/2015/09/explore-performance/)

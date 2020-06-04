@@ -21,41 +21,21 @@
             * [常识](fe/engineering/base.md)
             * [webpack](fe/engineering/webpack.md)
         * [代码检查](fe/engineering/linter.md)
+        * [重构](fe/engineering/refactoring.md)
     * 项目与业务
         * [代码规范](fe/project/codestyle.md)
         * [业务方案](fe/project/solutions.md)
         * [性能优化](fe/project/optimization.md)
         * [前端安全](fe/project/security.md)
         * [移动适配](fe/project/responsive.md)
-        * [监控](fe/optimize/monitoring.md)
-        * [Rich Text Display](fe/cases/richtextdisplay.md)
-        * [Animation](fe/cases/animation.md)
-        * [Wechat](fe/cases/wechat.md)
-        * [Realtime Application](fe/cases/realtime.md)
-        * [FE Architecture](fe/solutions/architecture.md)
-        * [Vue](fe/solutions/vue.md)
-        * [PWA](fe/solutions/pwa.md)
-        * [NuxtJS](fe/solutions/nuxt.md)
+        * [第三方库](fe/project/libs.md)
 * 后端
-    * NodeJS
-        * [Tutorials](server/node/tutorials.md)
     * 运维
         * [nginx](server/ops/nginx.md)
-* Meta Knowledge
-    * [algorithm](meta/algorithm.md)
-    * [Design Pattern](meta/designpattern.md)
-    * [State Manage](meta/statemanage.md)
-    * [architecture](meta/architecture.md)
-    * [Startup Tech](meta/startup_tech.md)
 * 计算机基础
     * [网络协议](cs/network.md)
 * 算法
     * [基本常识](algorithm/base.md)
     * [排序](algorithm/sort.md)
+    * [查找](algorithm/searching.md)
     * [动态规划](algorithm/dynamic_programming.md)
-* Tools
-    * [Dev](tools/dev.md)
-    * [Shortcuts](tools/shortcuts.md)
-* Other
-    * [Refers](other/refers.md)
-
