@@ -62,16 +62,51 @@ reduce：`arr.reduce(callback(accumulator, currentValue[, index[, array]])[, ini
 在JS中实现继承，大概有两种思路：使用构造函数或使用原型链。但两者各有利弊，构造函数继承会造成资源的浪费，因为每个实例都会创建父类的属性和方法副本；原型链继承当有包含引用类型值的原型时，则容易造成数据上的混乱。实际更多是两者结合形成组合继承。
 
 ```
-　Cat.prototype = new Animal();
+  function Cat() {
+    Animal.call(this)
+  }
 
+　Cat.prototype = new Animal(); 
 　Cat.prototype.constructor = Cat; // 因为上一句更改了 Cat 的 prototype，即 Cat.prototype.constructor 原本执行 Cat 自己，但是被改了。这一句是修正回来。
+```
+
+组合继承调用了两次父类的 constructor，寄生式组合继承可以只拷贝父类的 prototype 属性。
+
+```
+function Cat() {
+  Animal.call(this);
+}
+
+Cat.prototype = Object.create(Animal.prototype, {
+  constructor: {
+    value: Cat
+  }
+})
+
+// 继承函数
+function inherits(ctor, superCtor) {
+  ctor.super_ = superCtor;
+  ctor.prototype = Object.create(superCtor.prototype, {
+    constructor: {
+      value: ctor,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+}; 
+function Cat() {
+  Animal.call(this);
+  //...
+}
+inherits(Cat, Animal);
+
+Cat.prototype.fun = ...
 ```
 
 [Javascript继承机制的设计思想](http://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html)
 
-[Javascript面向对象编程（二）：构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance.html)
-
-[Javascript面向对象编程（三）：非构造函数的继承](http://www.ruanyifeng.com/blog/2010/05/object-oriented_javascript_inheritance_continued.html)
+[js继承、构造函数继承、原型链继承、组合继承、组合继承优化、寄生组合继承](https://segmentfault.com/a/1190000015216289)
 
 ### 静态方法、动态方法
 

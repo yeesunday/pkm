@@ -52,37 +52,40 @@ var quickSort = function(arr) {
 };
 
 // 原地排序
-function quickSort(arr, left, right) {
-    var len = arr.length,
-        partitionIndex,
-        left = typeof left != 'number' ? 0 : left,
-        right = typeof right != 'number' ? len - 1 : right;
+function quickSort(array, left, right) {
+  left = typeof left === 'number' ? left : 0
+  right = typeof right === 'number' ? right : array.length - 1
+  
+  // 只有一个元素的数组不用排序
+  if (array.length === 1) {
+    return array
+  }
+  // 结束递归条件
+  if (left >= right) {
+    return false
+  }
 
-    if (left < right) {
-        partitionIndex = partition(arr, left, right);
-        quickSort(arr, left, partitionIndex-1);
-        quickSort(arr, partitionIndex+1, right);
+  const target = array[left]
+  let i = left + 1, j = right
+
+  while(i < j) {
+    // 交换排序
+    while (i < j && array[j] >= target) {
+      j--
     }
-    return arr;
-}
-
-function partition(arr, left ,right) {     // 分区操作
-    var pivot = left,                      // 设定基准值（pivot）
-        index = pivot + 1;
-    for (var i = index; i <= right; i++) {
-        if (arr[i] < arr[pivot]) {
-            swap(arr, i, index);
-            index++;
-        }
+    while(i < j && array[i] < target) {
+      i++
     }
-    swap(arr, pivot, index - 1);
-    return index-1;
-}
-
-function swap(arr, i, j) {
-    var temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
+    [array[i], array[j]] = [array[j], array[i]]
+  }
+  // ij相遇
+  if (array[i] < target) {
+    [array[left], array[i]] = [array[i], array[left]]
+  }
+  
+  quickSort(array, left, i - 1)
+  quickSort(array, i + 1, right)
+  return array
 }
 ```
 
