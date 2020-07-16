@@ -56,10 +56,6 @@ function quickSort(array, left, right) {
   left = typeof left === 'number' ? left : 0
   right = typeof right === 'number' ? right : array.length - 1
   
-  // 只有一个元素的数组不用排序
-  if (array.length === 1) {
-    return array
-  }
   // 结束递归条件
   if (left >= right) {
     return false

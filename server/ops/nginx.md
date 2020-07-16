@@ -9,7 +9,9 @@
 [前端开发者必备的nginx知识](https://zhuanlan.zhihu.com/p/65393365)
 
 nginx可配置的缓存又有2种：
+
 1）客户端的缓存(一般指浏览器的缓存)。
+
 2）服务端的缓存(使用proxy-cache实现的)。
 
 ```

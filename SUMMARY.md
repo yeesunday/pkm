@@ -10,7 +10,7 @@
         * [TypeScript](fe/js/typescript.md)
     * HTML/CSS
     * 框架和类库
-        * [常识](fe/framework/base.md)
+        * [基础](fe/framework/base.md)
         * [ssr](fe/framework/ssr.md)
         * [状态管理](fe/framework/dataflow.md)
         * [React](fe/framework/react.md)
@@ -18,11 +18,10 @@
         * [浏览器API](fe/env/browser_api.md)
         * [浏览器原理](fe/env/browser.md)
     * 前端工程
-        * 打包工具
-            * [常识](fe/engineering/base.md)
-            * [webpack](fe/engineering/webpack.md)
-        * [代码检查](fe/engineering/linter.md)
+        * [基础](fe/engineering/base.md)
         * [重构](fe/engineering/refactoring.md)
+        * [项目构建](fe/engineering/build.md)
+        * [webpack](fe/engineering/webpack.md)
     * 项目与业务
         * [代码规范](fe/project/codestyle.md)
         * [业务方案](fe/project/solutions.md)
