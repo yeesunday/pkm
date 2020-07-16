@@ -44,3 +44,15 @@ Hot Module Replacement，简称HMR，无需完全刷新整个页面的同时，�
 [Webpack HMR 原理解析](https://zhuanlan.zhihu.com/p/30669007)
 
 [轻松理解webpack热更新原理](https://juejin.im/post/5de0cfe46fb9a071665d3df0)
+
+## tree-shaking
+
+Tree-shaking的本质是消除无用的js代码。无用代码消除在广泛存在于传统的编程语言编译器中，编译器可以判断出某些代码根本不影响输出，然后消除这些代码，这个称之为DCE（dead code elimination）。
+
+副作用意思是一个函数会、或者可能会对函数外部变量产生影响的行为。
+
+生产环境源码一般要经过 babel 编译，但编译后，全部模块被封装成 IIFE。因为IIFE比较特殊，它在被翻译时(JS并非编译型的语言)就会被执行，Webpack不做程序流分析，它不知道IIFE会做什么特别的事情，所以不会删除这部分代码。而 rollup 做了程序流分析，会删除 IIFE 里没有副作用的代码。webpack 的 shaking 是模块级别的，而 rollup 可以做到语句级别。如果需要 webpack 对某个含有副作用代码的模块进行 shaking，可以设置 `sideEffects: false`
+
+[你的Tree-Shaking并没什么卵用](https://juejin.im/post/5a5652d8f265da3e497ff3de)
+
+[Webpack Tree shaking 深入探究](https://juejin.im/post/5bb8ef58f265da0a972e3434)

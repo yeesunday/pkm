@@ -7,6 +7,7 @@
         * [执行机制](fe/js/workflow.md)
         * [编码能力](fe/js/code.md)
         * [手写轮子](fe/js/reimplementing.md)
+        * [TypeScript](fe/js/typescript.md)
     * HTML/CSS
     * 框架和类库
         * [常识](fe/framework/base.md)

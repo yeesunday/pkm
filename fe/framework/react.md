@@ -63,3 +63,20 @@ Portal 提供了一种将子节点渲染到存在于父组件以外的 DOM 节�
 ## Mixins、HOC、React Hooks
 
 [从Mixins到HOC再到React Hooks](https://juejin.im/post/5d3184596fb9a07eeb13e12c)
+
+## Hooks
+
+### useEffect
+
+* 与 class 组件不同的是，useEffect 允许你把相关的业务逻辑放在一个 effect 函数里，而不是散落在各个生命周期中
+* 当依赖数组含函数、数组、对象时，旧值比对时，总会返回 true。这时需要借助 useCallback 或 useMemo 去缓存旧值。
+
+### useCallback
+
+当需要缓存组件时，配合 React.memo（当 props 改变时才重新渲染）使用
+
+### 更新机制
+
+setXXX 触发组件更新，函数被重新执行，
+
+useRef

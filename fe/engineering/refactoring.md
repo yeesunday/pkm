@@ -56,8 +56,6 @@
 
 ## 设计模式六大原则
 
-![](../../assets/design-pattern02.png)
-
 快速了解，可见[这里](https://www.jianshu.com/p/807bc228dbc2)
 
 ## 常见设计模式的应用
