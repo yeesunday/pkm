@@ -1,11 +1,24 @@
 ## 常见的 Web 性能优化方案
 
+### 工程方面
+
 1. 请求数量——合并脚本和样式表，CSS Sprites，按需加载
 2. 请求带宽——开启Gzip，精简JavaScript，移除重复脚本，图像优化
 3. 缓存利用——使用CDN，使用外部JavaScript和CSS，使用浏览器缓存，预解析DNS
 4. 页面结构——将样式表放在顶部，将脚本放在底部，尽早刷新文档的输出
-5. 代码校验——避免CSS表达式，防抖节流，尽可能减少 dom 操作
-6. 减少握手次数——避免重定向，[KeepAlive](https://www.cnblogs.com/sunhk/p/5182054.html)
+5. 减少握手次数——避免重定向，[KeepAlive](https://www.cnblogs.com/sunhk/p/5182054.html)
+
+### 语言方面（react）
+
+* 函数式组件 React.memo；类组件 React.PureComponent
+* useMemo
+* useEffect 或 shouldComponentUpdate
+* 避免使用内联对象
+* 避免使用匿名函数
+* 调整CSS而不是强制组件加载和卸载
+* 使用React.Fragment避免添加额外的DOM
+* props和state的数据尽可能简单明了，扁平化
+* map里面添加key，并且key不要使用index（可变的）
 
 ## CSS3 开启 GPU 硬件加速
 

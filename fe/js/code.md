@@ -18,7 +18,7 @@ function currying(fn, ...args) {
 
 ## 防抖和节流
 
-对于高频调用，降低执行频率。一般使用形式为抛出一个闭包函数，用 setTimeout、调用判断和 `apply` (把上下文还原)实现。防抖适用于`延后执行`，节流适用于`限制频率`。
+对于高频调用，降低执行频率。一般使用形式为抛出一个闭包函数，注意上下文应用和参数透传。防抖适用于`延后执行`，节流适用于`限制频率`。
 
 防抖：触发高频事件后 n 秒内函数只会执行一次，如果 n 秒内高频事件再次被触发，则重新计算时间。思路为每次触发事件时都取消之前的延时调用方法。
 
@@ -92,7 +92,9 @@ const compose = function(...args) {
 }
 
 <!-- 炫酷版 -->
-const compose = (...args) => (...arg2) => args.reduce((r, f, index) => index === 0 ? f(...r) : f(r), arg2)
+function compose(...funcs) {
+  return funcs.reduce((a, b) => (...args) => a(b(...args)))
+}
 ```
 
 ## Call，Apply，Bind 的使用与区别

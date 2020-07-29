@@ -36,5 +36,7 @@
 _具有 BFC 特性的元素可以看作是隔离了的独立容器，容器里面的元素不会在布局上影响到外面的元素，并且 BFC 具有普通容器所没有的一些特性。_
 
 [前端响应式布局原理与方案](https://juejin.im/post/5caaa230e51d452b672f9703)
+
 [10 分钟理解 BFC 原理](https://zhuanlan.zhihu.com/p/25321647)
+
 [关于CSS-BFC深入理解](https://juejin.im/post/5909db2fda2f60005d2093db)

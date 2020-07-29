@@ -6,6 +6,11 @@ JS 执行过程
 
 微任务和宏任务皆为异步任务，它们都属于一个队列。宏任务和微任务执行完成后都会判断是否还有微任务，有的话执行微任务，没有就执行宏任务，如此循坏。
 
+常见的宏任务：整体代码 script，setTimeout，setInterval、setImmediate
+
+常见的微任务：原生 Promise(有些实现的promise将then方法放到了宏任务中)、process.nextTick、 MutationObserver
+
+
 ![](../../assets/hongwei.png)
 
 [JS事件循环机制（event loop）之宏任务/微任务](https://juejin.im/post/5b498d245188251b193d4059)

@@ -7,6 +7,16 @@ Redux 有三大原则：
 
 Flux 和 Redux 都是**单向数据流**
 
+[大白话解析 Redux 、 redux-thunk 、redux-saga 和 react-redux](https://github.com/lulujianglab/blog/issues/34)
+
 [Vuex、Flux、Redux、Redux-saga、Dva、MobX](https://zhuanlan.zhihu.com/p/53599723)
 
 [浅析redux-saga中间件及用法](http://blog.poetries.top/2018/08/29/redux-saga-and-redux-thunk/)
+
+## redux-thunk
+
+redux-thunk 对 dispatch 方法做了一个升级，如果给 dispatch 传递的仍然是个对象, dispatch 就会把这个对象传给 store ,跟之前的方法没有任何区别；但是假如传的是个函数，就不会直接传递给 store 了，会让这个函数先执行，然后执行完之后需要调用 store ,这个函数再去调用 store。从而实现异步代码拆分。
+
+## redux-saga
+
+当 action 被派发，不仅 reducer 能接收到，saga 也能接收到。saga 接管了异步 action 的处理，使用封装的 API，put 等对 store 进行修改。

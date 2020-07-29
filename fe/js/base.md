@@ -141,3 +141,19 @@ JS 模块化发展：IIFE -> CommonJS -> ES6 Module
 [再次梳理AMD、CMD、CommonJS、ES6 Module的区别](https://juejin.im/post/5db95e3a6fb9a020704bcd8d)
 
 [CommonJS 和 ES6 Module 究竟有什么区别？](https://juejin.im/post/5e5f10176fb9a07cd443c1e2)
+
+## 闭包
+
+闭包是有权限访问其他函数作用域内的变量的一个函数。
+
+由于闭包可以缓存上级作用域，那么就使得函数外部打破了“函数作用域”的束缚，可以访问函数内部的变量。闭包通常用来创建内部变量，使得这些变量不能被外部随意修改，同时又可以通过指定的函数接口来操作。
+
+应用
+
+* 防抖节流
+* 单例模式实现
+* IIFE
+
+PS：内存泄漏（Memory Leak）是指程序中己动态分配的堆内存由于某种原因程序未释放或无法释放，造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严重后果。可以借助 chrome 控制台的 performance 和 memory 工具可以排查内存泄露。
+
+[记录一次前端内存泄漏排查经历](https://juejin.im/post/5df33d97518825126e639c60)
