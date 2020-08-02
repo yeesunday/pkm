@@ -20,6 +20,41 @@
 * props和state的数据尽可能简单明了，扁平化
 * map里面添加key，并且key不要使用index（可变的）
 
+## 首屏优化
+
+1. SSR
+2. 骨架屏
+3. 加载动画
+
+[一种自动化生成骨架屏的方案](https://github.com/Jocs/jocs.github.io/issues/22)
+
+## 渐进增强和优雅降级
+
+渐进增强：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。
+
+优雅降级：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。
+
+```css
+.transition { /*渐进增强写法*/
+  -webkit-transition: all .5s;
+     -moz-transition: all .5s;
+       -o-transition: all .5s;
+          transition: all .5s;
+}
+.transition { /*优雅降级写法*/
+          transition: all .5s;
+       -o-transition: all .5s;
+     -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+}
+```
+
+如何选择：
+
+* 如果低版本用户居多，当然优先采用渐进增强的开发流程；
+* 如果高版本用户居多，为了提高大多数用户的使用体验，那当然优先采用优雅降级的开发流程。
+* 差不多就用渐进增强，业务可用性是第一
+
 ## CSS3 开启 GPU 硬件加速
 
 CSS animations, transforms 以及 transitions 不会自动开启GPU加速，而是由浏览器的缓慢的软件渲染引擎来执行。那我们怎样才可以切换到GPU模式呢，很多浏览器提供了某些触发的CSS规则。现在，像Chrome, FireFox, Safari, IE9+和最新版本的Opera都支持硬件加速，当它们检测到页面中某个DOM元素应用了某些CSS规则时就会开启，最显著的特征的元素的3D变换。例如：

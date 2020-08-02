@@ -21,6 +21,8 @@ MVVM模式的优点:
 * Dep：订阅中心，提供添加、移除、通知订阅的接口；
 * Watcher: data 属性的订阅者，收到变化通知后调用更新函数更新视图。
 
+数据劫持 Object.defineProperty 不可以监控数组的变化，要实现只能修改数组原型方法，增加渲染视图的操作。但是 proxy 可以。
+
 [Vue MVVM 实现（defineProperty 篇）](https://jancat.github.io/post/2019/vue-mvvm/)
 
 [模拟 Vue 手写一个 MVVM](https://juejin.im/post/5b578682f265da0f504a5c6d)
@@ -38,6 +40,14 @@ MVVM模式的优点:
 [浅谈 React/Vue/Inferno 在 DOM Diff 算法上的异同](https://www.imooc.com/article/295545)
 
 [传统diff、react优化diff、vue优化diff](https://www.jianshu.com/p/398e63dc1969)
+
+##  Virtual DOM
+
+好处
+
+1. Virtual DOM 是以对象的方式来描述真实dom对象的，那么在做一些update的时候，可以在内存中进行数据比对，__只更新需要更新的内容__，减少对真实dom的操作减少浏览器重排重绘的次数，减少浏览器的压力
+2. 开发更加便利
+3. 数据驱动的编程思想引入，使框架可以处理 DOM 外的事务，如服务端渲染等。
 
 ## AOP
 

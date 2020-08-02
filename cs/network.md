@@ -8,9 +8,15 @@ TCP 三次握手和四次挥手
 
 UDP 不进行握手和挥手确认，所以传输效率比 TCP 高，实时性更好。但同时，这也决定了 UDP 是无连接的、不可靠的一种数据传输协议。
 
-Socket（套接字） 是 TCP 对外的编程接口。
+WebSocket 是 HTML5 开始提供的一种浏览器与服务器进行全双工通讯的网络技术，属于应用层协议。它基于 TCP 传输协议，并复用HTTP的握手通道。
+
+* WebSocket可以在浏览器里使用
+* 支持双向通信
+* 使用很简单
+
 
 [一篇搞懂TCP、HTTP、Socket、Socket连接池](https://segmentfault.com/a/1190000014044351)
+[WebSocket协议：5分钟从入门到精通](https://www.cnblogs.com/chyingp/p/websocket-deep-in.html)
 
 ## HTTP2 新特性
 
@@ -25,7 +31,14 @@ HTTP/1 的几种优化可以弃用:
 
 合并文件、内联资源、雪碧图、域名分片对于 HTTP/2 来说是不必要的，使用 h2 尽可能将资源细粒化，文件分解地尽可能散，不用担心请求数多
 
+### 启用 HTTP2
+
+1. 升级到 https
+2. nginx 配置 http2 `listen 443 ssl http2;`
+
 [HTTP2 详解](https://juejin.im/post/5b88a4f56fb9a01a0b31a67e)
+
+[升级 Nginx 开启 HTTP/2](https://juejin.im/entry/6844903647818547213)
 
 ## 缓存策略
 
@@ -79,6 +92,17 @@ HTTP/1 的几种优化可以弃用:
 
   防止数字证书被掉包：证书中包含了域名信息，客户端比对域名即可发现是否被掉包
 
+### HTTPS 和 HTTP 的区别主要如下：
+
+1. http 超文本传输协议，是明文传输；https 是由 SSL（ 安全套接字协议） + HTTP 构建的加密协议，比 http 协议安全。
+2. 默认端口：前者是80，后者是443。
+
+### 启用 HTTPS
+
+1. 从经销商处购买证书
+2. 在服务器安装证书
+3. 修改 nginx 将 http 链接 301 到 https
+
 [彻底搞懂HTTPS的加密机制](https://zhuanlan.zhihu.com/p/43789231)
 
 [看完还不懂HTTPS我直播吃翔](https://zhuanlan.zhihu.com/p/25976060)
@@ -104,6 +128,9 @@ HTTP/1 的几种优化可以弃用:
 ### 跨域方案
 
 1. JSONP，只支持GET请求，支持老式浏览器，以及可以向不支持 CORS 的网站请求数据
+    1. 首先是利用script标签的src属性来实现跨域。
+    2. 通过将前端方法作为参数传递到服务器端，然后由服务器端注入参数之后再返回，实现服务器端向客户端通信。
+    3. 由于使用script标签的src属性，因此只支持get方法
 2. CORS，支持所有类型的 HTTP 请求。需要在服务端返回添加头部 `Access-Control-Allow-Origin`。复杂请求的 CORS 请求如 PUT，会在正式通信之前，增加一次HTTP查询请求，称为”预检”请求,该请求是 option 方法的，通过该请求来知道服务端是否允许跨域请求。
 3. 反向代理，使用 node 中间件或 nginx。同源策略是浏览器需要遵循的标准，而如果是服务器向服务器请求就无需遵循同源策略。
 

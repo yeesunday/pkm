@@ -1,6 +1,6 @@
 ## 数据类型
 
-7 种原始类型:
+8 种原始类型:
 * Boolean
 * Null
 * Undefined
@@ -8,7 +8,7 @@
 * BigInt
 * String
 * Symbol
-和 Object
+* Object
 
 ## 新特性
 
@@ -32,9 +32,9 @@ Array fill 方法，如果是对象，则填充的是对象的引用。例如
 
 reduce：`arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])`，如果提供了initialValue，则起始索引号为0，否则从索引1起始。
 
-## RegExp
+## 正则表达式
 
-* [Simple Tutorial](http://www.cnblogs.com/onepixel/p/5218904.html)
+* [简单教程](http://www.cnblogs.com/onepixel/p/5218904.html)
 
 ## JS i18n
 
@@ -157,3 +157,25 @@ JS 模块化发展：IIFE -> CommonJS -> ES6 Module
 PS：内存泄漏（Memory Leak）是指程序中己动态分配的堆内存由于某种原因程序未释放或无法释放，造成系统内存的浪费，导致程序运行速度减慢甚至系统崩溃等严重后果。可以借助 chrome 控制台的 performance 和 memory 工具可以排查内存泄露。
 
 [记录一次前端内存泄漏排查经历](https://juejin.im/post/5df33d97518825126e639c60)
+
+
+## new 操作符
+
+```js
+function New() {
+  // 获取构造函数
+  Constructor = [].shift.call(arguments)
+  // 复制原型
+  var obj = Object.create(Constructor.prototype)
+  // 复制方法属性
+  var result = Constructor.apply(obj, arguments)
+  // 如果构造函数返回了对象，则赋值对象
+  return typeof result === 'object' ? result || obj : obj
+}
+var person = New(Person, '小明', 25)
+```
+
+1. 获取实参中的第一个参数（构造函数），就是调用New函数传进来的第一个参数，暂时记为Constructor；
+2. 使用Constructor的原型链结合Object.create来创建一个对象，此时新对象的原型链为Constructor函数的原型对象；（结合我们上面讨论的，要访问原型链上面的属性和方法，要使用实例对象的__proto__属性）
+3. 改变Constructor函数的this指向，指向新创建的实例对象，然后call方法再调用Constructor函数，为新对象赋予属性和方法；（结合我们上面讨论的，要访问构造函数的属性和方法，要使用call或apply）
+4. 返回新创建的对象，为Constructor函数的一个实例对象。

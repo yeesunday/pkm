@@ -23,7 +23,16 @@
 
 ### 浏览器工作流程
 
-构建 DOM Tree -> 构建 CSS Rule Tree -> 构建 Rendering Tree -> 布局 -> 绘制。
+输入 URL 到页面呈现：
+
+1. DNS 解析
+2. TCP 连接，三次握手
+3. 发送 HTTP 请求
+4. 服务器处理请求并返回HTTP报文
+5. 浏览器解析渲染页面：构建 DOM Tree -> 构建 CSS Rule Tree -> 构建 Rendering Tree -> 布局 -> 绘制
+6. TCP 链接关闭，四次挥手
+
+[前端经典面试题: 从输入URL到页面加载发生了什么？](https://segmentfault.com/a/1190000006879700)
 
 ### JS 阻塞
 
