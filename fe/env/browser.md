@@ -28,7 +28,7 @@
 1. DNS 解析
 2. TCP 连接，三次握手
 3. 发送 HTTP 请求
-4. 服务器处理请求并返回HTTP报文
+4. 服务器处理请求并返回 HTTP 报文
 5. 浏览器解析渲染页面：构建 DOM Tree -> 构建 CSS Rule Tree -> 构建 Rendering Tree -> 布局 -> 绘制
 6. TCP 链接关闭，四次挥手
 
@@ -38,7 +38,7 @@
 
 ![](../../assets/browser_render02.png)
 
-1. 正常遇到 script 标签，CSS Rule Tree 继续构建 -> 构建完毕，执行 JS -> 构建 DOM Tree。CSSOM 构建时，JavaScript 执行将暂停，直至 CSSOM 就绪。所以引入顺序上，CSS 应资源先于 JavaScript 资源。
+1. 因为 JavaScript 不只是可以改 DOM，还可以更改 CSSOM。而不完整的CSSOM是无法使用的，所以存在阻塞的 CSS 资源时，浏览器会延迟 JavaScript 的执行和 DOM 构建。因此引入顺序上 CSS 应资源先于 JavaScript 资源。构建或执行顺序 CSSOM -> JS -> DOM
 2. 加 async 或 defer 属性都可以做到下载阶段不阻塞 DOM Tree 的构建，但 defer 可以做到执行阶段也不阻塞。因为 defer 会在 DOMContentLoaded 事件之后才执行 js。什么时候用defer，什么时候用async呢？一般来说，两者之间的选择则是看脚本之间是否有依赖关系，有依赖的话应当要保证执行顺序，应当使用defer；没有依赖的话使用async，同时使用的话defer失效。
 
 这里要简要说明一下`window.DOMContentLoaded`和`window.onload`这两个事件的区别，前者是在DOM解析完毕之后触发，这时候DOM解析完毕，JavaScript可以获取到DOM引用，但是页面中的一些资源比如图片、视频等还没有加载完，作用同jQuery中的ready事件。后者则是页面完全加载完毕，包括各种资源。

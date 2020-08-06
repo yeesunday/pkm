@@ -9,19 +9,24 @@ html语义化标签包括 body, article, nav, aside, section, header, footer, hg
 
 [快速理解web语义化](https://juejin.im/entry/6844903582274174984)
 
-## 伪类/伪元素
+## DOM 事件流
 
-伪类用于当已有元素处于的某个状态时，为其添加对应的样式，这个状态是根据用户行为而动态变化的。比如:hover
+先捕获再冒泡
 
-伪元素用于创建一些不在文档树中的元素，并为其添加样式。比如::before 一般建议使用双冒号表示。
+* addEventListener的第三个参数默认为false，为 true 时在捕获时触发。`element.addEventListener(event, function, useCapture)`
+* e.stopPropagation()：既可以阻止事件冒泡，也可以阻止事件捕获，也可以阻止处于目标阶段。兼容 ie 写法 `window.event.cancelBubble = true; `
+* e.preventDefault()：取消默认事件
 
-[总结伪类与伪元素](http://www.alloyteam.com/2016/05/summary-of-pseudo-classes-and-pseudo-elements/)
+### 事件委托
 
-## disabled 和 readonly 的区别
+优点：
+1. 减少事件注册，节省内存
+2. 减少了dom节点更新的操作，处理逻辑只需在委托元素上进行。如：新添加的li不用绑定事件，删除li时，不需要进行元素与处理函数的解绑。
 
-这两种写法都会使显示出来的文本框不能输入文字，都能做到使用户不能够更改表单域中的内容，但：
+缺点：
+1. 事件委托基于冒泡，对于onfoucs和onblur等事件不支持
+2. 层级过多，冒泡过程中，可能会被某层 event.stopPropagation 等阻止掉（建议就近委托）
 
-1. disabled 会使文本框变灰，而 readonly 只是使文本框不能输入，外观没有变化。
-2. readonly 只针对 input 和 textarea 有效，而 disabled 对于所有的表单元素都有效。
-3. 将表单以 POST 或 GET 的方式提交的话，使用了 disabled 后，这个元素的值不会被传递出去，而 readonly 会将该值传递出去。
+
+
 

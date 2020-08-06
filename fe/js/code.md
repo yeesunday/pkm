@@ -1,3 +1,15 @@
+## 扁平化
+
+```js
+function flatten(arr) {
+    return arr.reduce((acc, cur) => acc.concat(Array.isArray(cur) ? flatten(cur) : cur), [])
+}
+// 指定深度
+function flatten(arr, deep) {
+    return arr.reduce((acc, cur) => acc.concat(Array.isArray(cur) && deep > 1 ? flatten(cur, deep - 1) : cur), [])
+}
+```
+
 ## 函数柯里化
 
 在数学和计算机科学中，柯里化是一种将使用多个参数的一个函数转换成一系列使用一个参数的函数的技术。实现：
@@ -94,74 +106,6 @@ const compose = function(...args) {
 <!-- 炫酷版 -->
 function compose(...funcs) {
   return funcs.reduce((a, b) => (...args) => a(b(...args)))
-}
-```
-
-## Call，Apply，Bind 的使用与区别
-
-相同点:
-
-- 都是使用于方法借用及明确 this 指向场景
-- 第一个参数都是 this 要指向的对象
-- 都可以利用后续参数传参
-
-不同点:
-
-- 参数传递方式不同
-- call,apply 是立即调用,bind 是动态调用
-
-基本使用:
-
-- Array.prototype.slice.call(obj,0,1,2)
-- Array.prototype.slice.apply(obj,[0,1,2])
-- Array.prototype.slice.bind(obj)(0,1,2)
-
-从上面的例子可以看出来 call,apply 使用上几乎保持一致，而 bind 实际上是返回了一个函数
-
-```
-// call
-Function.prototype.myCall = function (context = window, ...args) {
-    if (this === Function.prototype) {
-    return undefined; // 用于防止 Function.prototype.myCall() 直接调用
-    }
-    context = context || window;
-    const fn = Symbol();
-    context[fn] = this;
-    const result = context[fn](...args);
-    delete context[fn];
-    return result;
-}
-
-// apply
-Function.prototype.myApply = function (context = window, args) {
-    if (this === Function.prototype) {
-    return undefined; // 用于防止 Function.prototype.myCall() 直接调用
-    }
-    const fn = Symbol();
-    context[fn] = this;
-    let result;
-    if (Array.isArray(args)) {
-    result = context[fn](...args);
-    } else {
-    result = context[fn]();
-    }
-    delete context[fn];
-    return result;
-}
-
-// bind
-Function.prototype.myBind = function (context,...args1) {
-    if (this === Function.prototype) {
-    throw new TypeError('Error')
-    }
-    const _this = this
-    return function F(...args2) {
-    // 判断是否用于构造函数
-    if (this instanceof F) {
-        return new _this(...args1, ...args2)
-    }
-    return _this.apply(context, args1.concat(args2))
-    }
 }
 ```
 
@@ -328,3 +272,73 @@ function clone(target, map = new WeakMap()) {
 ```
 
 [原生 js 实现深拷贝](https://juejin.im/post/5da47110f265da5b633cdf2f)
+
+## JSONP
+
+```javascript
+(function (window,document) {
+    "use strict";
+    var jsonp = function (url,data,callback) {
+
+        // 1.将传入的data数据转化为url字符串形式
+        // {id:1,name:'jack'} => id=1&name=jack
+        var dataString = url.indexof('?') == -1? '?': '&';
+        for(var key in data){
+            dataString += key + '=' + data[key] + '&';
+        };
+
+        // 2 处理url中的回调函数
+        // cbFuncName回调函数的名字 ：my_json_cb_名字的前缀 + 随机数（把小数点去掉）
+        var cbFuncName = 'my_json_cb_' + Math.random().toString().replace('.','');
+        dataString += 'callback=' + cbFuncName;
+
+        // 3.创建一个script标签并插入到页面中
+        var scriptEle = document.createElement('script');
+        scriptEle.src = url + dataString;
+
+        // 4.挂载回调函数
+        window[cbFuncName] = function (data) {
+            callback(data);
+            // 处理完回调函数的数据之后，删除jsonp的script标签
+            document.body.removeChild(scriptEle);
+        }
+
+        document.body.appendChild(scriptEle);
+    }
+
+    window.$jsonp = jsonp;
+
+})(window,document)
+```
+
+## 私有变量实现
+
+```js
+// 闭包
+class Example {
+  constructor() {
+    var _private = '';
+    _private = 'private';
+    this.getName = function() {return _private}
+  }
+}
+
+var ex = new Example();
+
+console.log(ex.getName()); // private
+console.log(ex._private); // undefined
+
+```
+
+[ES6 系列之私有变量的实现](https://juejin.im/post/6844903717561434126)
+
+## 异步编程方案
+
+1. 回调函数
+2. 事件监听
+3. 发布订阅
+4. promise
+5. async / await
+6. Generators/ yield
+
+[JS 异步编程六种方案](https://juejin.im/post/6844903760280420366)

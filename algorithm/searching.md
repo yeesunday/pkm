@@ -66,5 +66,39 @@ function bfs (node) {
 bfs(tree);
 ```
 
+## 二分查找
+
+```js
+// 递归版
+function bsearch(array,low,high,target)
+{
+    if (low > high) return -1;
+    var mid = Math.floor((low + high)/2);
+    if (array[mid]> target){
+        return  bsearch(array, low, mid -1, target);
+    } else if (array[mid]< target){
+        return  bsearch(array, mid+1, high, target);
+    }ese{return mid;}
+        
+}
+// 非递归
+function bsearchWithoutRecursion(array,low,high,target)
+{
+    while(low <= high)
+    {
+        var mid = Math.floor((low + high)/2);
+        if (array[mid] > target){
+            high = mid - 1;
+        }else if (array[mid] < target){
+            low = mid + 1;
+        }else{
+            return mid;
+        }
+    }
+    return -1;
+}
+
+
+```
 
 

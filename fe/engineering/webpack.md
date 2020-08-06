@@ -4,7 +4,12 @@ Tree-shaking的本质是消除无用的js代码。无用代码消除在广泛存
 
 副作用意思是一个函数会、或者可能会对函数外部变量产生影响的行为。
 
-生产环境源码一般要经过 babel 编译，但编译后，全部模块被封装成 IIFE。因为IIFE比较特殊，它在被翻译时(JS并非编译型的语言)就会被执行，Webpack不做程序流分析，它不知道IIFE会做什么特别的事情，所以不会删除这部分代码。而 rollup 做了程序流分析，会删除 IIFE 里没有副作用的代码。webpack 的 shaking 是模块级别的，而 rollup 可以做到语句级别。如果需要 webpack 对某个含有副作用代码的模块进行 shaking，可以设置 `sideEffects: false`
+生产环境源码一般要经过 babel 编译，但编译后，全部模块被封装成 IIFE。因为IIFE比较特殊，它在被翻译时(JS并非编译型的语言)就会被执行，Webpack不做程序流分析，它不知道IIFE会做什么特别的事情，所以不会删除这部分代码。而 rollup 做了程序流分析，会删除 IIFE 里没有副作用的代码。webpack 的 shaking 是模块级别的，而 rollup 可以做到语句级别。
+
+webpack 开启 tree shaking
+1. 使用 ES2015 模块语法（即 import 和 export）。
+2. 在项目 package.json 文件中，添加一个 "sideEffects" 入口。
+3. 引入一个能够删除未引用代码(dead code)的压缩工具(minifier)（例如 UglifyJSPlugin）
 
 [你的Tree-Shaking并没什么卵用](https://juejin.im/post/5a5652d8f265da3e497ff3de)
 

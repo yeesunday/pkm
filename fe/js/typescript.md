@@ -1,18 +1,16 @@
 ## 概念
 
+TypeScript 是 JavaScript 的一个超集，主要提供了可用于静态类型检查的类型系统和对 ES6 的支持，它由 Microsoft 开发，代码开源于 GitHub 上。
+
 类：定义了一件事物的抽象特点，包含它的属性和方法。ts 中可以使用 `public` 、`private`、`protected`
 
-接口：对象形状的描述，或对类一部分行为的描述（门、车、报警器的例子）[类与接口]（https://ts.xcatliu.com/advanced/class-and-interfaces.html）
+接口：对象形状的描述，或对类一部分行为的描述（门、车、报警器的例子）[类与接口](https://ts.xcatliu.com/advanced/class-and-interfaces.html)
 
 枚举：用于取值被限定在一定范围内的场景，比如一周只能有七天，颜色限定为红绿蓝等。
 
 类型推论：如果没有明确的指定类型，那么 TypeScript 会依照类型推论（Type Inference）的规则推断出一个类型。
 
 泛型：指在定义函数、接口或类的时候，不预先指定具体的类型，而在使用的时候再指定类型的一种特性。
-
-
-
-
 
 ## 优缺点
 

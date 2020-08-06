@@ -3,10 +3,10 @@
 七层网络模型
 ![](../assets/network_model.png)
 
-TCP 三次握手和四次挥手
+TCP 三次握手和四次挥手。挥手比握手多一次，是因为除了客户端需要通知不再发送数据，服务端也需要确认。
 ![](../assets/tcp.jpeg)
 
-UDP 不进行握手和挥手确认，所以传输效率比 TCP 高，实时性更好。但同时，这也决定了 UDP 是无连接的、不可靠的一种数据传输协议。
+UDP 不进行握手和挥手确认，所以传输效率比 TCP 高，实时性更好。但同时，这也决定了 UDP 是无连接的、不可靠的一种数据传输协议。但如果客户端使用 udp 协议发出消息后，服务器收到该包，使用 udp 协议发回一个应答包，如此来可以保证消息可以无遗漏传输。
 
 WebSocket 是 HTML5 开始提供的一种浏览器与服务器进行全双工通讯的网络技术，属于应用层协议。它基于 TCP 传输协议，并复用HTTP的握手通道。
 
@@ -14,6 +14,11 @@ WebSocket 是 HTML5 开始提供的一种浏览器与服务器进行全双工通
 * 支持双向通信
 * 使用很简单
 
+### TCP/IP 协议
+
+网际协议群，利用 IP 进行通信时所必须用到的协议群的统称，包括IP 或 ICMP、TCP 或 UDP、TELNET 或 FTP、以及 HTTP 等都属于 TCP/IP 协议。
+
+[一篇文章带你熟悉 TCP/IP 协议（网络协议篇二）](https://juejin.im/post/6844903510509633550)
 
 [一篇搞懂TCP、HTTP、Socket、Socket连接池](https://segmentfault.com/a/1190000014044351)
 [WebSocket协议：5分钟从入门到精通](https://www.cnblogs.com/chyingp/p/websocket-deep-in.html)
@@ -54,6 +59,13 @@ HTTP/1 的几种优化可以弃用:
 1. 浏览器在加载资源时，根据请求头的expires和cache-control判断是否命中强缓存，是则直接从缓存读取资源，不会发请求到服务器。（200 from cache）
 2. 如果没有命中强缓存，浏览器一定会发送一个请求到服务器，通过last-modified和etag验证资源是否命中协商缓存，如果命中，服务器会将这个请求返回，但是不会返回这个资源的数据，依然是从缓存中读取资源。（304）
 3. 如果前面两者都没有命中，直接从服务器加载资源（200）
+
+Cache-Control 值：
+1. Cache-Control: max-age=315360000
+2. Cache-Control: no-cache 需经过新鲜度校验才可从服务器缓存中获取，类似协商缓存
+3. Cache-Control: no-store 才是真正的不缓存数据到本地
+4. Cache-Control: public 可以被所有用户缓存（多用户共享），包括终端和CDN等中间代理服务器
+5. Cache-Control: private 只能被终端浏览器缓存（而且是私有缓存），不允许中继缓存服务器进行缓存
 
 [浏览器缓存机制：强缓存、协商缓存](https://github.com/amandakelake/blog/issues/41)
 
@@ -133,6 +145,21 @@ HTTP/1 的几种优化可以弃用:
     3. 由于使用script标签的src属性，因此只支持get方法
 2. CORS，支持所有类型的 HTTP 请求。需要在服务端返回添加头部 `Access-Control-Allow-Origin`。复杂请求的 CORS 请求如 PUT，会在正式通信之前，增加一次HTTP查询请求，称为”预检”请求,该请求是 option 方法的，通过该请求来知道服务端是否允许跨域请求。
 3. 反向代理，使用 node 中间件或 nginx。同源策略是浏览器需要遵循的标准，而如果是服务器向服务器请求就无需遵循同源策略。
+
+只要同时满足以下两大条件，就属于简单请求；否则为复杂请求。
+
+```
+（1) 请求方法是以下三种方法之一：
+HEAD
+GET
+POST
+（2）HTTP的头信息不超出以下几种字段：
+Accept
+Accept-Language
+Content-Language
+Last-Event-ID
+Content-Type：只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain
+```
 
 ### 设置和获取跨域 Cookie
 

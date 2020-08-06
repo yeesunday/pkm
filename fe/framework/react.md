@@ -48,6 +48,11 @@ componentWillUnmount
 
 React在一些响应体验要求较高的场景不适用，比如动画，布局和手势。根本原因是渲染/更新过程一旦开始无法中断，持续占用主线程，主线程忙于执行 JS，无暇他顾（布局、动画），造成掉帧、延迟响应（甚至无响应）等不佳体验。React Fiber 能够解决主线程长时间占用的问题。Fiber 把渲染/更新过程拆分为小块任务，通过合理的调度机制来控制时间（更细粒度、更强的控制力）。
 
+### 对开发者的影响
+
+* componentWillMount,componentWillReceiveProps,componentWillUpdate几个生命周期方法不再安全，由于任务执行过程可以被打断，这几个生命周期可能会执行多次，如果它们包含副作用(比如Ajax)，会有意想不到的bug。React团队提供了替换的生命周期方法。建议如果使用以上方法，尽量使用纯函数，避免以后踩坑。
+* 需要关注react为任务片设置的优先级，特别是页面用动画的情况。避免出现低优先级任务延迟太久执行或永不执行的 bug。优先级大概是：文本框输入 > 本次调度结束需完成的任务 > 动画过渡 > 交互反馈 > 数据更新 > 不会显示但以防将来会显示的任务
+
 [完全理解React Fiber](http://www.ayqy.net/blog/dive-into-react-fiber)
 
 [React Fiber](https://juejin.im/post/5ab7b3a2f265da2378403e57)
@@ -66,10 +71,14 @@ Portal 提供了一种将子节点渲染到存在于父组件以外的 DOM 节�
 
 ## Hooks
 
+### useState
+
+可以用 useEffect 模拟 setState 的回调
+
 ### useEffect
 
 * 与 class 组件不同的是，useEffect 允许你把相关的业务逻辑放在一个 effect 函数里，而不是散落在各个生命周期中
-* 当依赖数组含函数、数组、对象时，旧值比对时，总会返回 true。这时需要借助 useCallback 或 useMemo 去缓存旧值。
+* 浅比较，当依赖数组含函数、数组、对象等引用类型时，旧值比对时，总会返回 true。这时需要借助 useCallback 或 useMemo 去缓存旧值。
 
 ### useCallback
 
@@ -86,3 +95,7 @@ useRef
 * 父子间：props
 * 子父间：往子组件传回调函数
 * 其他：store、context（生成/消费）
+
+## key 的作用
+
+key 是给每一个 vnode 的唯一 id,可以依靠 key,更准确, 更快的拿到 oldVnode 中对应的 vnode 节点，高效和准确的更新节点。
