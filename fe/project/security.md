@@ -10,8 +10,11 @@ CSRF，即 Cross Site Request Forgery，中译是跨站请求伪造，是一种�
 
 1. 使用验证码强迫用户与应用交互，进行意愿验证
 2. Referer Check
-3. Set-Cookie: SameSite
+3. Set-Cookie: SameSite；
+
+SameSite 值：Strict、Lax、None
 
 XSS 篡改网站，CSRF 冒充用户。XSS 的 Cross Site主要是指在本网站运行了来自其他网站的脚本，而 CSRF 的Cross Site则相反，指在其他网站对本网站造成了影响。跟 XSS 相比，XSS 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。
 
+[Cookie 的 SameSite 属性](https://www.ruanyifeng.com/blog/2019/09/cookie-samesite.html)
 

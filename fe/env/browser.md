@@ -15,6 +15,25 @@
 
 可以看到 js 引擎是浏览器渲染进程的一个线程。而 js 线程和渲染线程是互斥的，所以当 setInterval 密度足够高时，可能会导致画面与数据不一致。解决办法是 requestAnimationFrame，他在每次浏览器重绘之前调用 js 函数。
 
+requestAnimationFrame 基本配合递归调用来实现。
+
+```js
+var start = null;
+var element = document.getElementById('SomeElementYouWantToAnimate');
+element.style.position = 'absolute';
+
+function step(timestamp) {
+  if (!start) start = timestamp;
+  var progress = timestamp - start;
+  element.style.left = Math.min(progress / 10, 200) + 'px';
+  if (progress < 2000) {
+    window.requestAnimationFrame(step);
+  }
+}
+
+window.requestAnimationFrame(step);
+```
+
 [setTimeout和requestAnimationFrame](https://juejin.im/post/5e621f5fe51d452700567c32)
 
 ## 渲染过程
@@ -45,12 +64,14 @@
 
 ### 重绘和回流
 
-重绘：当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观、风格，而不会影响布局的，比如background-color。
+重绘：当render tree中的一些元素需要更新属性，而这些属性只是影响元素的外观、风格，而不会影响布局的，比如color、background-color、visibility。
 
-回流：当render tree中的一部分(或全部)因为元素的规模尺寸、布局、隐藏等改变而需要重新构建
+回流：当render tree中的一部分(或全部)因为元素的规模尺寸、布局等改变而需要重新构建
 
 回流必定会发生重绘，重绘不一定会引发回流。
 
 [深入浅出浏览器渲染原理](https://blog.fundebug.com/2019/01/03/understand-browser-rendering/)
 
 [浏览器的渲染：过程与原理](https://juejin.im/entry/59e1d31f51882578c3411c77)
+
+[浏览器的回流与重绘 (Reflow & Repaint)](https://juejin.im/post/6844903569087266823)

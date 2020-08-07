@@ -27,14 +27,15 @@
     res.end(html);
   ```
 * 数据同构：node server 获取到组件后，调用组件的静态方法获取数据
-  ```
+  ```js
     //数据预取
     const data = Component.getInitialProps(branch[0].match.params);
 
     //传入数据，渲染组件为 html 字符串
     const html = renderToString(<Component data={data}/>);
 
-    res.end(html);
+    //数据注水
+    const propsData = `<textarea style="display:none" id="krs-server-render-data-BOX">${JSON.stringify(data)}</textarea>`;
   ```
 * 渲染同构：服务端和浏览器端，首屏 html 和数据必须两者一致，否则会出现闪烁。服务端已经通过 `renderToString` 拿到组件 html，通过组件静态方法拿到初始数据，只差把数据传给浏览器端这一步。通过服务器端注水，浏览器端脱水，可实现数据同步，`ReactDOM.hydrate` 比对渲染差异，加载事件处理，完成 SPA 构建。
 
